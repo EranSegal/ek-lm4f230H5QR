@@ -1,0 +1,128 @@
+[Stack]
+FillEnabled=0
+OverflowWarningsEnabled=1
+WarningThreshold=90
+SpWarningsEnabled=1
+WarnLogOnly=1
+UseTrigger=1
+TriggerName=main
+LimitSize=0
+ByteLimit=50
+[PlDriver]
+MemConfigValue=C:\Program Files\IAR Systems\Embedded Workbench 6.4\arm\CONFIG\debugger\TexasInstruments\LM4F230H5QR.ddf
+FirstRun=0
+[Jet]
+DisableInterrupts=0
+JetConnSpec=Emu=JTAGjet;Port=USB JTAGjet:72776
+[ArmDriver]
+EnableCache=0
+[DebugChecksum]
+Checksum=-1995055122
+[Exceptions]
+StopOnUncaught=_ 0
+StopOnThrow=_ 0
+[CallStack]
+ShowArgs=0
+[Disassembly]
+MixedMode=1
+[SWOManager]
+SamplingDivider=8192
+OverrideClock=0
+CpuClock=1298099570
+SwoClock=1920233065
+DataLogMode=0
+ItmPortsEnabled=63
+ItmTermIOPorts=1
+ItmLogPorts=0
+ItmLogFile=$PROJ_DIR$\ITM.log
+[Interrupts]
+Enabled=1
+[MemoryMap]
+Enabled=0
+Base=0
+UseAuto=0
+TypeViolation=1
+UnspecRange=1
+ActionState=1
+[Trace1]
+Enabled=0
+ShowSource=1
+[PowerLog]
+LogEnabled=0
+GraphEnabled=0
+ShowTimeLog=1
+ShowTimeSum=0
+Title0=ITrgPwr
+Setup0=0 1 0 700000 2 0 4 0 0
+LiveEnabled=0
+LiveFile=PowerLogLive.log
+[DataLog]
+LogEnabled=0
+SumEnabled=0
+GraphEnabled=0
+ShowTimeLog=1
+ShowTimeSum=1
+[EventLog]
+LogEnabled=0
+SumEnabled=0
+GraphEnabled=0
+ShowTimeLog=1
+ShowTimeSum=1
+Title0=Ch0
+Setup0=0 1 0 4294967295 1 0 4 0 0
+Title1=Ch1
+Setup1=0 1 0 4294967295 1 0 4 0 0
+Title2=Ch2
+Setup2=0 1 0 4294967295 1 0 4 0 0
+Title3=Ch3
+Setup3=0 1 0 4294967295 1 0 4 0 0
+SumSortOrder=0
+Event0=1 1 1
+Event1=1 1 1
+Event2=1 1 1
+Event3=1 1 1
+[InterruptLog]
+LogEnabled=0
+SumEnabled=0
+GraphEnabled=0
+ShowTimeLog=1
+ShowTimeSum=1
+SumSortOrder=0
+[Trace2]
+Enabled=0
+ShowSource=0
+[SWOTraceWindow]
+ForcedPcSampling=0
+ForcedInterruptLogs=0
+ForcedItmLogs=0
+EventCPI=0
+EventEXC=0
+EventFOLD=0
+EventLSU=0
+EventSLEEP=0
+[DriverProfiling]
+Enabled=1
+Mode=3
+Graph=0
+Symbiont=0
+Exclusions=
+[PowerProbe]
+Frequency=10000
+Probe0=ITrgPwr
+ProbeSetup0=2 1 1 2 0 0
+[Log file]
+LoggingEnabled=_ 0
+LogFile=_ ""
+Category=_ 0
+[TermIOLog]
+LoggingEnabled=_ 0
+LogFile=_ ""
+[CallStackLog]
+Enabled=0
+[Disassemble mode]
+mode=0
+[Breakpoints2]
+Count=0
+[Aliases]
+Count=0
+SuppressDialog=0

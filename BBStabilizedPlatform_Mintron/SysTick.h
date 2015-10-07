@@ -1,0 +1,36 @@
+/*
+  Copyright Bluebird Aero Systems Engineering 2012
+
+  $Id: SysTick.h,v 1.2 2011/03/30 06:58:34 EranS Exp $
+  $Log: SysTick.h,v $
+  Revision 1.2  2011/03/30 06:58:34  EranS
+  added more telemetry
+  simplified and improved motor driver
+
+  Revision 1.1  2011/03/15 12:23:45  EranS
+  First save
+
+  Revision 1.2  2011/01/23 15:23:43  EranS
+  General save
+
+
+ */
+#ifdef SYSTICK_MAIN
+unsigned long g_ulTickCount;
+unsigned long SysTickCounts;
+unsigned long SysTickCounte;
+unsigned long SysTickCountd;
+
+
+#else
+extern unsigned long g_ulTickCount;
+extern unsigned long SysTickCounts;
+extern unsigned long SysTickCounte;
+extern unsigned long SysTickCountd;
+
+#endif
+void SysTickInit(unsigned long rate);
+void  SysTickAction(void);
+void TimerInit(unsigned long rate);
+extern unsigned long GetSysTickCount(void);
+

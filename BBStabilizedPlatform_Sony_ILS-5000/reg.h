@@ -1,0 +1,111 @@
+/*
+  Copyright Bluebird Aero Systems Engineering 2011
+
+  $Id: reg.h,v 1.3 2011/04/10 10:37:29 EranS Exp $
+  $Log: ITG3200.h,v $
+  Revision 1.3  2011/04/10 10:37:29  EranS
+  Add filer3.c and AHRS from Lumus project
+
+  Revision 1.2  2011/04/06 06:44:20  EranS
+  cleaning up, add some constants, move gyro_at_rest code
+
+  Revision 1.1  2011/03/15 12:23:45  EranS
+  First save
+
+
+*/
+
+#ifndef __REG_H__
+#define __REG_H__
+
+#ifndef __MTYPE_H__
+#include "mtype.h"
+#endif
+
+#ifndef __GLOBALS_H__
+#include "globals.h"
+#endif
+
+
+typedef struct 
+{
+          volatile unsigned long mode:1;
+          volatile unsigned long BIT_result:3;
+          volatile unsigned long fifo_overflow:1;
+          volatile unsigned long fifo_underflow:1;
+} status_reg;
+
+typedef struct 
+{
+          volatile unsigned long mode:2;
+          volatile unsigned long init:1;
+} control_reg ;
+
+
+// external registers bit definitions:
+#define HW_LED_CONTROL            GPIO_PORTD_DATA_R
+#define HW_TP_CONTROL             GPIO_PORTE_DATA_R
+
+// Registers declaration:
+#define LED_CONTROL_REG           0x0000
+#define TP_REGISTER            	  0x0001
+#define CONFIG1_REGISTER          0x0002
+#define VMD_REGISTER              0x0003
+#define FPGA_CONTROL_WR_REG       0x0004
+#define EVENT_REGISTER            0x0005
+#define ATD_INIT_REGISTER         0x0006
+#define RESET_REGISTER            0x0007
+
+// HW_GPIO_PORTC_REGISTER Bits Definitions:
+#define RELAYS_CHANGED_BIT       0x0001
+#define STOP_CCTV_BIT            0x0002
+#define RECORD_ACTIVE_BIT        0x0004
+#define ALARM_ACTIVE_BIT         0x0008
+#define END_POST_ALARM           0x0010
+#define BOARD_LED_BIT            0x0020
+#define PRE_OPEN_BIT          	 0x0040
+#define REF_REFRESH_BIT          0x0080
+#define ONE_SENSOR_IS_PRE        0x0100
+#define UNIT_ALARM_ACTIVE        0x0200
+#define EVENT_ACTIVE_BIT         0x0400
+#define UNIT_INIT_DONE	         0x0800
+#define UNREGISTERED_UNIT 	 	 0x1000  // clear when registered.
+#define UNINITIALIZED_SBC	 	 0x2000  // clear when registered.
+#define DONE_SET_PARAM			 0x4000
+#define SEN_ALARM_NONXMIT		 0x8000
+
+// CONFIG1_REGISTER Bits Definitions:
+#define USE_MEMORY_UNIT          0x0001
+#define DO_PREALARM_BIT          0x0002
+#define POWERUP_BIT              0x0004
+#define SENSOR_NOT_DELAY         0x0008
+#define LED_CHANGE         		 0x0010
+#define QUANTIZATION_FUCT        0x0060  // bits 5..6: 0x00 -> quant 1, 0x01 -> quant 5.
+#define CRCB_BIT                 0x0080  // bit 7: determine the quant table type: 0 -> Y, 1 -> CRCB.
+#define PARAM_ACCEPT_BIT         0x2000  // COLOR SYSTEM
+#define COLOR_SUSPEND_BIT        0x4000  // COLOR SYSTEM
+#define COLOR_FRAME_BIT          0x8000
+
+// HW_GPIO_PORTC_REGISTER Bits Definitions:
+#define BOARD_LED1_BIT	         0x0001
+#define BOARD_LED2_BIT           0x0002
+
+// HW_GPIO_PORTD_REGISTER Bits Definitions:
+#define BOARD_TP5_BIT	         0x0010
+#define BOARD_TP6_BIT	         0x0020
+
+// HW_LED_CONTROL register functions:
+#define  DEBUG_LED1(state)    (SetGPIOReg(LED_CONTROL_REG, BOARD_LED1_BIT, state ? 0 : BOARD_LED1_BIT))
+#define  DEBUG_LED2(state)    (SetGPIOReg(LED_CONTROL_REG, BOARD_LED2_BIT, state ? 0 : BOARD_LED2_BIT))
+
+// HW_TP_CONTROL register functions:
+#define  DEBUG_TP5(state)    (SetGPIOReg(TP_REGISTER, BOARD_TP5_BIT, state ? BOARD_TP5_BIT : 0))
+#define  DEBUG_TP6(state)    (SetGPIOReg(TP_REGISTER, BOARD_TP6_BIT, state ? BOARD_TP6_BIT : 0))
+
+WORD Get(WORD reg, WORD mask);
+void Set(WORD reg, WORD mask);
+void Clear(WORD reg, WORD mask);
+void SetGPIOReg(WORD reg, WORD mask, WORD val);
+void TP6Toggle(void);
+
+#endif

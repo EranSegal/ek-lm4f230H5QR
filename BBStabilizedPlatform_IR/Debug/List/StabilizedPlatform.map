@@ -1,0 +1,1017 @@
+###############################################################################
+#                                                                             #
+# IAR ELF Linker V6.40.1.53790/W32 for ARM              27/May/2013  12:21:17 #
+# Copyright 2007-2012 IAR Systems AB.                                         #
+#                                                                             #
+#    Output file  =  C:\Program Files\IAR Systems\Embedded Workbench          #
+#                    6.4\arm\examples\TexasInstruments\Stellaris\boards\ek-lm #
+#                    4f230H5QR\BBStabilizedPlatform_IR\Debug\Exe\StabilizedPl #
+#                    atform.out                                               #
+#    Map file     =  C:\Program Files\IAR Systems\Embedded Workbench          #
+#                    6.4\arm\examples\TexasInstruments\Stellaris\boards\ek-lm #
+#                    4f230H5QR\BBStabilizedPlatform_IR\Debug\List\StabilizedP #
+#                    latform.map                                              #
+#    Command line =  "C:\Program Files\IAR Systems\Embedded Workbench         #
+#                    6.4\arm\examples\TexasInstruments\Stellaris\boards\ek-lm #
+#                    4f230H5QR\BBStabilizedPlatform_IR\Debug\Obj\A3906.o"     #
+#                    "C:\Program Files\IAR Systems\Embedded Workbench         #
+#                    6.4\arm\examples\TexasInstruments\Stellaris\boards\ek-lm #
+#                    4f230H5QR\BBStabilizedPlatform_IR\Debug\Obj\BMA180.o"    #
+#                    "C:\Program Files\IAR Systems\Embedded Workbench         #
+#                    6.4\arm\examples\TexasInstruments\Stellaris\boards\ek-lm #
+#                    4f230H5QR\BBStabilizedPlatform_IR\Debug\Obj\GPIOhandler. #
+#                    o" "C:\Program Files\IAR Systems\Embedded Workbench      #
+#                    6.4\arm\examples\TexasInstruments\Stellaris\boards\ek-lm #
+#                    4f230H5QR\BBStabilizedPlatform_IR\Debug\Obj\ITG3200.o"   #
+#                    "C:\Program Files\IAR Systems\Embedded Workbench         #
+#                    6.4\arm\examples\TexasInstruments\Stellaris\boards\ek-lm #
+#                    4f230H5QR\BBStabilizedPlatform_IR\Debug\Obj\Interpret.o" #
+#                     "C:\Program Files\IAR Systems\Embedded Workbench        #
+#                    6.4\arm\examples\TexasInstruments\Stellaris\boards\ek-lm #
+#                    4f230H5QR\BBStabilizedPlatform_IR\Debug\Obj\Led.o"       #
+#                    "C:\Program Files\IAR Systems\Embedded Workbench         #
+#                    6.4\arm\examples\TexasInstruments\Stellaris\boards\ek-lm #
+#                    4f230H5QR\BBStabilizedPlatform_IR\Debug\Obj\MAG3110.o"   #
+#                    "C:\Program Files\IAR Systems\Embedded Workbench         #
+#                    6.4\arm\examples\TexasInstruments\Stellaris\boards\ek-lm #
+#                    4f230H5QR\BBStabilizedPlatform_IR\Debug\Obj\MasterI2C.o" #
+#                     "C:\Program Files\IAR Systems\Embedded Workbench        #
+#                    6.4\arm\examples\TexasInstruments\Stellaris\boards\ek-lm #
+#                    4f230H5QR\BBStabilizedPlatform_IR\Debug\Obj\Stabilize.o" #
+#                     "C:\Program Files\IAR Systems\Embedded Workbench        #
+#                    6.4\arm\examples\TexasInstruments\Stellaris\boards\ek-lm #
+#                    4f230H5QR\BBStabilizedPlatform_IR\Debug\Obj\StabilizedPl #
+#                    atform.o" "C:\Program Files\IAR Systems\Embedded         #
+#                    Workbench 6.4\arm\examples\TexasInstruments\Stellaris\bo #
+#                    ards\ek-lm4f230H5QR\BBStabilizedPlatform_IR\Debug\Obj\Sy #
+#                    sTick.o" "C:\Program Files\IAR Systems\Embedded          #
+#                    Workbench 6.4\arm\examples\TexasInstruments\Stellaris\bo #
+#                    ards\ek-lm4f230H5QR\BBStabilizedPlatform_IR\Debug\Obj\co #
+#                    mproc.o" "C:\Program Files\IAR Systems\Embedded          #
+#                    Workbench 6.4\arm\examples\TexasInstruments\Stellaris\bo #
+#                    ards\ek-lm4f230H5QR\BBStabilizedPlatform_IR\Debug\Obj\en #
+#                    coder.o" "C:\Program Files\IAR Systems\Embedded          #
+#                    Workbench 6.4\arm\examples\TexasInstruments\Stellaris\bo #
+#                    ards\ek-lm4f230H5QR\BBStabilizedPlatform_IR\Debug\Obj\fi #
+#                    lter3.o" "C:\Program Files\IAR Systems\Embedded          #
+#                    Workbench 6.4\arm\examples\TexasInstruments\Stellaris\bo #
+#                    ards\ek-lm4f230H5QR\BBStabilizedPlatform_IR\Debug\Obj\re #
+#                    g.o" "C:\Program Files\IAR Systems\Embedded Workbench    #
+#                    6.4\arm\examples\TexasInstruments\Stellaris\boards\ek-lm #
+#                    4f230H5QR\BBStabilizedPlatform_IR\Debug\Obj\rmb20d01.o"  #
+#                    "C:\Program Files\IAR Systems\Embedded Workbench         #
+#                    6.4\arm\examples\TexasInstruments\Stellaris\boards\ek-lm #
+#                    4f230H5QR\BBStabilizedPlatform_IR\Debug\Obj\startup.o"   #
+#                    "C:\Program Files\IAR Systems\Embedded Workbench         #
+#                    6.4\arm\examples\TexasInstruments\Stellaris\boards\ek-lm #
+#                    4f230H5QR\BBStabilizedPlatform_IR\Debug\Obj\uart_echo.o" #
+#                     "C:\Program Files\IAR Systems\Embedded Workbench        #
+#                    6.4\arm\examples\TexasInstruments\Stellaris\boards\ek-lm #
+#                    4f230H5QR\BBStabilizedPlatform_IR\Debug\Obj\utilities.o" #
+#                     "C:\Program Files\IAR Systems\Embedded Workbench        #
+#                    6.4\arm\examples\TexasInstruments\Stellaris\driverlib\ew #
+#                    arm-cm4f\Exe\driverlib-cm4f.a" --redirect                #
+#                    _Printf=_PrintfFull --redirect _Scanf=_ScanfFull -o      #
+#                    "C:\Program Files\IAR Systems\Embedded Workbench         #
+#                    6.4\arm\examples\TexasInstruments\Stellaris\boards\ek-lm #
+#                    4f230H5QR\BBStabilizedPlatform_IR\Debug\Exe\StabilizedPl #
+#                    atform.out" --map "C:\Program Files\IAR                  #
+#                    Systems\Embedded Workbench 6.4\arm\examples\TexasInstrum #
+#                    ents\Stellaris\boards\ek-lm4f230H5QR\BBStabilizedPlatfor #
+#                    m_IR\Debug\List\StabilizedPlatform.map" --config         #
+#                    "C:\Program Files\IAR Systems\Embedded Workbench         #
+#                    6.4\arm\examples\TexasInstruments\Stellaris\boards\ek-lm #
+#                    4f230H5QR\BBStabilizedPlatform_IR\uart_echo.icf"         #
+#                    --semihosting --entry __iar_program_start --vfe          #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor       = *
+__SystemLibrary = DLib
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A1":  place at start of [0x00000000-0x0003ffff] { ro section .intvec };
+"P1":  place in [from 0x00000000 to 0x0003ffff] { ro };
+"A2":  place at start of [0x20000000-0x20007fff] { section VTABLE };
+"P2":  place in [from 0x20000000 to 0x20007fff] { rw, block HEAP };
+
+  Section            Kind        Address    Size  Object
+  -------            ----        -------    ----  ------
+"A1":                                      0x26c
+  .intvec            const    0x00000000   0x26c  startup.o [1]
+                            - 0x0000026c   0x26c
+
+"P1":                                     0xc328
+  .text              ro code  0x0000026c  0x4dac  comproc.o [1]
+  .text              ro code  0x00005018    0x44  strcpy.o [6]
+  .text              ro code  0x0000505c    0x14  comproc.o [1]
+  .text              ro code  0x00005070    0xd6  uart.o [4]
+  .text              ro code  0x00005146    0x2e  copy_init3.o [6]
+  .text              ro code  0x00005174   0xdd0  Interpret.o [1]
+  .text              ro code  0x00005f44    0x90  Led.o [1]
+  .text              ro code  0x00005fd4     0xe  uart_echo.o [1]
+  .text              ro code  0x00005fe2    0x22  zero_init3.o [6]
+  .text              ro code  0x00006004   0x3e0  uart_echo.o [1]
+  .text              ro code  0x000063e4    0x4e  FltToDbl.o [5]
+  .text              ro code  0x00006432     0xa  xsprout.o [3]
+  .text              ro code  0x0000643c   0x1a2  DblMul.o [5]
+  .text              ro code  0x000065e0    0x34  sprintf.o [3]
+  .text              ro code  0x00006614   0xa68  encoder.o [1]
+  .text              ro code  0x0000707c    0x36  strlen.o [6]
+  .text              ro code  0x000070b4    0xfc  SysTick.o [1]
+  .text              ro code  0x000071b0    0x30  I32ToDbl.o [5]
+  .text              ro code  0x000071e0   0x246  DblDiv.o [5]
+  .rodata            const    0x00007428    0x6c  sysctl.o [4]
+  .text              ro code  0x00007498   0x8b8  pow.o [5]
+  .text              ro code  0x00007d50    0xe8  DblAdd.o [5]
+  .text              ro code  0x00007e38    0x66  ABImemset.o [6]
+  .text              ro code  0x00007ea0    0x90  DblToFlt.o [5]
+  .text              ro code  0x00007f30    0x50  reg.o [1]
+  .text              ro code  0x00007f80    0x76  ABImemcpy.o [6]
+  .text              ro code  0x00007ff8   0x2dc  sysctl.o [4]
+  .text              ro code  0x000082d4   0x4c4  gpio.o [4]
+  .text              ro code  0x00008798   0x16c  interrupt.o [4]
+  .text              ro code  0x00008904     0xe  uart_echo.o [1]
+  .text              ro code  0x00008914   0xcce  xprintffull.o [3]
+  .text              ro code  0x000095e4    0x64  qei.o [4]
+  .text              ro code  0x00009648   0x2b0  A3906.o [1]
+  .text              ro code  0x000098f8    0x38  systick.o [4]
+  .text              ro code  0x00009930    0x50  timer.o [4]
+  .text              ro code  0x00009980    0x42  xdnorm.o [5]
+  .text              ro code  0x000099c2    0x7e  xdint.o [5]
+  .text              ro code  0x00009a40    0x20  DblCmpEq.o [5]
+  .text              ro code  0x00009a60     0xc  errno.o [3]
+  .text              ro code  0x00009a6c    0x2e  DblCmpGe.o [5]
+  .text              ro code  0x00009a9c    0x2e  DblCmpLe.o [5]
+  .text              ro code  0x00009acc    0x58  DblToI32.o [5]
+  .text              ro code  0x00009b24   0x180  DblSub.o [5]
+  .text              ro code  0x00009ca4    0xb0  xlog.o [5]
+  .text              ro code  0x00009d54   0x31e  xexp.o [5]
+  .text              ro code  0x0000a074    0x10  cpu.o [4]
+  .text              ro code  0x0000a084    0x78  ABImemmove.o [6]
+  .text              ro code  0x0000a0fc    0x16  strchr.o [6]
+  .text              ro code  0x0000a114    0x58  memchr.o [6]
+  .text              ro code  0x0000a16c    0xee  I64DivMod.o [6]
+  .text              ro code  0x0000a25c   0x114  xdscale.o [5]
+  .text              ro code  0x0000a370     0xe  div.o [3]
+  .text              ro code  0x0000a380    0x94  pwm.o [4]
+  .text              ro code  0x0000a414     0x2  xtls.o [3]
+  .text              ro code  0x0000a418     0x2  I64DivZer.o [6]
+  .text              ro code  0x0000a41c   0x94c  Stabilize.o [1]
+  .text              ro code  0x0000ad68   0x140  ITG3200.o [1]
+  .text              ro code  0x0000aea8     0x6  cosf.o [5]
+  .text              ro code  0x0000aeae     0x6  sinf.o [5]
+  .text              ro code  0x0000aeb4   0x35c  MasterI2C.o [1]
+  .text              ro code  0x0000b210   0x194  GPIOhandler.o [1]
+  .text              ro code  0x0000b3a4   0x16c  xfsin.o [5]
+  .text              ro code  0x0000b510   0x168  BMA180.o [1]
+  .text              ro code  0x0000b678    0x10  MAG3110.o [1]
+  .text              ro code  0x0000b688    0xec  xfquad.o [5]
+  .text              ro code  0x0000b774    0x50  xfdint.o [5]
+  .text              ro code  0x0000b7c4   0x13c  fmodf.o [5]
+  .text              ro code  0x0000b900     0xc  iarEdom.o [6]
+  .text              ro code  0x0000b90c   0x2a4  StabilizedPlatform.o [1]
+  .text              ro code  0x0000bbb0   0x284  filter3.o [1]
+  .text              ro code  0x0000be34   0x100  sqrt.o [5]
+  .text              ro code  0x0000bf34    0x1c  sqrtf.o [5]
+  .text              ro code  0x0000bf50    0x60  asinf.o [5]
+  .text              ro code  0x0000bfb0    0xa4  xatanf.o [5]
+  .rodata            const    0x0000c054    0xa0  comproc.o [1]
+  .rodata            const    0x0000c0f4    0x94  interrupt.o [4]
+  .text              ro code  0x0000c188    0x88  rmb20d01.o [1]
+  .text              ro code  0x0000c210     0xa  adc.o [4]
+  .rodata            const    0x0000c21c    0x78  gpio.o [4]
+  .text              ro code  0x0000c294    0x28  data_init3.o [6]
+  .iar.init_table    const    0x0000c2bc    0x2c  - Linker created -
+  .text              ro code  0x0000c2e8    0x1e  startup.o [1]
+  .text              ro code  0x0000c306     0xc  cstartup_M.o [6]
+  .text              ro code  0x0000c314    0x1a  fpinit_M.o [5]
+  .text              ro code  0x0000c330    0x16  cmain.o [6]
+  .text              ro code  0x0000c346     0x4  low_level_init.o [3]
+  .text              ro code  0x0000c34a     0x4  exit.o [3]
+  .text              ro code  0x0000c350     0xa  cexit.o [6]
+  .text              ro code  0x0000c35c    0x14  exit.o [7]
+  .rodata            const    0x0000c370    0x1c  comproc.o [1]
+  .rodata            const    0x0000c38c    0x14  comproc.o [1]
+  .rodata            const    0x0000c3a0    0x14  comproc.o [1]
+  .rodata            const    0x0000c3b4    0x14  comproc.o [1]
+  .rodata            const    0x0000c3c8    0x14  interrupt.o [4]
+  .rodata            const    0x0000c3dc    0x14  interrupt.o [4]
+  .rodata            const    0x0000c3f0    0x10  comproc.o [1]
+  .rodata            const    0x0000c400    0x10  comproc.o [1]
+  .rodata            const    0x0000c410     0xc  comproc.o [1]
+  .rodata            const    0x0000c41c     0xc  comproc.o [1]
+  .rodata            const    0x0000c428     0xc  comproc.o [1]
+  .rodata            const    0x0000c434     0xc  comproc.o [1]
+  .rodata            const    0x0000c440     0xc  comproc.o [1]
+  .rodata            const    0x0000c44c     0xc  sysctl.o [4]
+  .rodata            const    0x0000c458     0x8  Interpret.o [1]
+  .rodata            const    0x0000c460     0x8  Interpret.o [1]
+  .rodata            const    0x0000c468     0x8  Interpret.o [1]
+  .rodata            const    0x0000c470     0x8  Interpret.o [1]
+  .rodata            const    0x0000c478     0x8  comproc.o [1]
+  .rodata            const    0x0000c480     0x8  comproc.o [1]
+  .rodata            const    0x0000c488     0x8  comproc.o [1]
+  .rodata            const    0x0000c490     0x8  comproc.o [1]
+  .rodata            const    0x0000c498     0x8  comproc.o [1]
+  .rodata            const    0x0000c4a0     0x8  comproc.o [1]
+  .rodata            const    0x0000c4a8     0x8  comproc.o [1]
+  .rodata            const    0x0000c4b0     0x8  comproc.o [1]
+  .rodata            const    0x0000c4b8     0x8  comproc.o [1]
+  .rodata            const    0x0000c4c0     0x8  comproc.o [1]
+  .rodata            const    0x0000c4c8     0x8  comproc.o [1]
+  .rodata            const    0x0000c4d0     0x8  comproc.o [1]
+  .rodata            const    0x0000c4d8     0x4  filter3.o [1]
+  .rodata            const    0x0000c4dc     0x4  filter3.o [1]
+  .rodata            const    0x0000c4e0     0x4  filter3.o [1]
+  .rodata            const    0x0000c4e4     0x4  filter3.o [1]
+  .rodata            const    0x0000c4e8     0x4  filter3.o [1]
+  .rodata            const    0x0000c4ec     0x4  filter3.o [1]
+  .rodata            const    0x0000c4f0     0x4  filter3.o [1]
+  .rodata            const    0x0000c4f4     0x4  filter3.o [1]
+  .rodata            const    0x0000c4f8     0x4  filter3.o [1]
+  .rodata            const    0x0000c4fc     0x4  filter3.o [1]
+  .rodata            const    0x0000c500     0x4  filter3.o [1]
+  .rodata            const    0x0000c504     0x4  filter3.o [1]
+  .rodata            const    0x0000c508     0x0  zero_init3.o [6]
+  .rodata            const    0x0000c508     0x0  copy_init3.o [6]
+  Initializer bytes  ro data  0x0000c508    0x8c  <for P2 s0>
+                            - 0x0000c594  0xc328
+
+"A2":                                      0x26c
+  VTABLE             zero     0x20000000   0x26c  interrupt.o [4]
+                            - 0x2000026c   0x26c
+
+"P2", part 1 of 3:                          0x8c
+  P2 s0                       0x2000026c    0x8c  <Init block>
+    .data            inited   0x2000026c     0xc  comproc.o [1]
+    .data            inited   0x20000278     0x8  comproc.o [1]
+    .data            inited   0x20000280     0x8  comproc.o [1]
+    .data            inited   0x20000288     0x8  comproc.o [1]
+    .data            inited   0x20000290     0x4  Interpret.o [1]
+    .data            inited   0x20000294     0x4  Interpret.o [1]
+    .data            inited   0x20000298     0x4  Interpret.o [1]
+    .data            inited   0x2000029c     0x4  Interpret.o [1]
+    .data            inited   0x200002a0     0x4  Interpret.o [1]
+    .data            inited   0x200002a4     0x4  Interpret.o [1]
+    .data            inited   0x200002a8     0x4  Stabilize.o [1]
+    .data            inited   0x200002ac     0x4  Stabilize.o [1]
+    .data            inited   0x200002b0     0x4  Stabilize.o [1]
+    .data            inited   0x200002b4     0x4  Stabilize.o [1]
+    .data            inited   0x200002b8     0x4  Stabilize.o [1]
+    .data            inited   0x200002bc     0x4  Stabilize.o [1]
+    .data            inited   0x200002c0     0x4  Stabilize.o [1]
+    .data            inited   0x200002c4     0x4  Stabilize.o [1]
+    .data            inited   0x200002c8     0x4  Stabilize.o [1]
+    .data            inited   0x200002cc     0x4  Stabilize.o [1]
+    .data            inited   0x200002d0     0x4  Stabilize.o [1]
+    .data            inited   0x200002d4     0x4  Stabilize.o [1]
+    .data            inited   0x200002d8     0x4  Stabilize.o [1]
+    .data            inited   0x200002dc     0x4  Stabilize.o [1]
+    .data            inited   0x200002e0     0x4  Stabilize.o [1]
+    .data            inited   0x200002e4     0x4  Stabilize.o [1]
+    .data            inited   0x200002e8     0x4  Stabilize.o [1]
+    .data            inited   0x200002ec     0x4  Stabilize.o [1]
+    .data            inited   0x200002f0     0x2  comproc.o [1]
+    .data            inited   0x200002f2     0x1  Interpret.o [1]
+    .data            inited   0x200002f3     0x1  Interpret.o [1]
+    .data            inited   0x200002f4     0x1  StabilizedPlatform.o [1]
+                            - 0x200002f8    0x8c
+
+"P2", part 2 of 3:                        0x1458
+  .bss               zero     0x200002f8   0x6dc  comproc.o [1]
+  .bss               zero     0x200009d4   0x200  comproc.o [1]
+  .bss               zero     0x20000bd4   0x1d8  comproc.o [1]
+  .bss               zero     0x20000dac   0x11c  comproc.o [1]
+  .bss               zero     0x20000ec8   0x11c  comproc.o [1]
+  .bss               zero     0x20000fe4   0x10c  comproc.o [1]
+  .bss               zero     0x200010f0   0x100  comproc.o [1]
+  .bss               zero     0x200011f0   0x100  uart_echo.o [1]
+  .bss               zero     0x200012f0    0xe0  rmb20d01.o [1]
+  .bss               zero     0x200013d0    0x80  rmb20d01.o [1]
+  .bss               zero     0x20001450    0x5c  BMA180.o [1]
+  .bss               zero     0x200014ac    0x40  ITG3200.o [1]
+  .bss               zero     0x200014ec    0x34  uart_echo.o [1]
+  .bss               zero     0x20001520    0x28  comproc.o [1]
+  .bss               zero     0x20001548    0x28  comproc.o [1]
+  .bss               zero     0x20001570    0x20  Interpret.o [1]
+  .bss               zero     0x20001590    0x20  comproc.o [1]
+  .bss               zero     0x200015b0    0x20  reg.o [1]
+  .bss               zero     0x200015d0    0x14  MasterI2C.o [1]
+  .bss               zero     0x200015e4    0x14  filter3.o [1]
+  .bss               zero     0x200015f8     0xc  comproc.o [1]
+  .bss               zero     0x20001604     0xc  comproc.o [1]
+  .bss               zero     0x20001610     0x8  A3906.o [1]
+  .bss               zero     0x20001618     0x8  A3906.o [1]
+  .bss               zero     0x20001620     0x8  A3906.o [1]
+  .bss               zero     0x20001628     0x8  BMA180.o [1]
+  .bss               zero     0x20001630     0x8  ITG3200.o [1]
+  .bss               zero     0x20001638     0x8  ITG3200.o [1]
+  .bss               zero     0x20001640     0x8  comproc.o [1]
+  .bss               zero     0x20001648     0x4  A3906.o [1]
+  .bss               zero     0x2000164c     0x4  A3906.o [1]
+  .bss               zero     0x20001650     0x4  Interpret.o [1]
+  .bss               zero     0x20001654     0x4  Interpret.o [1]
+  .bss               zero     0x20001658     0x4  Interpret.o [1]
+  .bss               zero     0x2000165c     0x4  MasterI2C.o [1]
+  .bss               zero     0x20001660     0x4  MasterI2C.o [1]
+  .bss               zero     0x20001664     0x4  MasterI2C.o [1]
+  .bss               zero     0x20001668     0x4  MasterI2C.o [1]
+  .bss               zero     0x2000166c     0x4  Stabilize.o [1]
+  .bss               zero     0x20001670     0x4  Stabilize.o [1]
+  .bss               zero     0x20001674     0x4  Stabilize.o [1]
+  .bss               zero     0x20001678     0x4  Stabilize.o [1]
+  .bss               zero     0x2000167c     0x4  Stabilize.o [1]
+  .bss               zero     0x20001680     0x4  Stabilize.o [1]
+  .bss               zero     0x20001684     0x4  Stabilize.o [1]
+  .bss               zero     0x20001688     0x4  Stabilize.o [1]
+  .bss               zero     0x2000168c     0x4  Stabilize.o [1]
+  .bss               zero     0x20001690     0x4  Stabilize.o [1]
+  .bss               zero     0x20001694     0x4  Stabilize.o [1]
+  .bss               zero     0x20001698     0x4  Stabilize.o [1]
+  .bss               zero     0x2000169c     0x4  Stabilize.o [1]
+  .bss               zero     0x200016a0     0x4  Stabilize.o [1]
+  .bss               zero     0x200016a4     0x4  Stabilize.o [1]
+  .bss               zero     0x200016a8     0x4  Stabilize.o [1]
+  .bss               zero     0x200016ac     0x4  Stabilize.o [1]
+  .bss               zero     0x200016b0     0x4  Stabilize.o [1]
+  .bss               zero     0x200016b4     0x4  Stabilize.o [1]
+  .bss               zero     0x200016b8     0x4  StabilizedPlatform.o [1]
+  .bss               zero     0x200016bc     0x4  StabilizedPlatform.o [1]
+  .bss               zero     0x200016c0     0x4  SysTick.o [1]
+  .bss               zero     0x200016c4     0x4  encoder.o [1]
+  .bss               zero     0x200016c8     0x4  encoder.o [1]
+  .bss               zero     0x200016cc     0x4  encoder.o [1]
+  .bss               zero     0x200016d0     0x4  encoder.o [1]
+  .bss               zero     0x200016d4     0x4  encoder.o [1]
+  .bss               zero     0x200016d8     0x4  encoder.o [1]
+  .bss               zero     0x200016dc     0x4  encoder.o [1]
+  .bss               zero     0x200016e0     0x4  encoder.o [1]
+  .bss               zero     0x200016e4     0x4  encoder.o [1]
+  .bss               zero     0x200016e8     0x4  filter3.o [1]
+  .bss               zero     0x200016ec     0x4  filter3.o [1]
+  .bss               zero     0x200016f0     0x4  filter3.o [1]
+  .bss               zero     0x200016f4     0x4  filter3.o [1]
+  .bss               zero     0x200016f8     0x4  filter3.o [1]
+  .bss               zero     0x200016fc     0x4  filter3.o [1]
+  .bss               zero     0x20001700     0x4  filter3.o [1]
+  .bss               zero     0x20001704     0x4  filter3.o [1]
+  .bss               zero     0x20001708     0x4  filter3.o [1]
+  .bss               zero     0x2000170c     0x4  filter3.o [1]
+  .bss               zero     0x20001710     0x4  filter3.o [1]
+  .bss               zero     0x20001714     0x4  filter3.o [1]
+  .bss               zero     0x20001718     0x4  filter3.o [1]
+  .bss               zero     0x2000171c     0x4  filter3.o [1]
+  .bss               zero     0x20001720     0x4  filter3.o [1]
+  .bss               zero     0x20001724     0x4  filter3.o [1]
+  .bss               zero     0x20001728     0x4  rmb20d01.o [1]
+  .bss               zero     0x2000172c     0x4  rmb20d01.o [1]
+  .bss               zero     0x20001730     0x4  rmb20d01.o [1]
+  __DLIB_PERTHREAD   zero     0x20001734     0x4  errno.o [3]
+  .bss               zero     0x20001738     0x2  encoder.o [1]
+  .bss               zero     0x2000173a     0x2  encoder.o [1]
+  .bss               zero     0x2000173c     0x1  A3906.o [1]
+  .bss               zero     0x2000173d     0x1  BMA180.o [1]
+  .bss               zero     0x2000173e     0x1  ITG3200.o [1]
+  .bss               zero     0x2000173f     0x1  Interpret.o [1]
+  .bss               zero     0x20001740     0x1  Led.o [1]
+  .bss               zero     0x20001741     0x1  Led.o [1]
+  .bss               zero     0x20001742     0x1  MAG3110.o [1]
+  .bss               zero     0x20001743     0x1  MasterI2C.o [1]
+  .bss               zero     0x20001744     0x1  MasterI2C.o [1]
+  .bss               zero     0x20001745     0x1  StabilizedPlatform.o [1]
+  .bss               zero     0x20001746     0x1  comproc.o [1]
+  .bss               zero     0x20001747     0x1  comproc.o [1]
+  .bss               zero     0x20001748     0x1  filter3.o [1]
+  .bss               zero     0x20001749     0x1  rmb20d01.o [1]
+  .bss               zero     0x2000174a     0x1  uart_echo.o [1]
+  .bss               zero     0x2000174b     0x1  uart_echo.o [1]
+  .bss               zero     0x2000174c     0x1  uart_echo.o [1]
+  .bss               zero     0x2000174d     0x1  uart_echo.o [1]
+                            - 0x2000174e  0x1456
+
+"P2", part 3 of 3:                         0x400
+  .noinit            uninit   0x20001750   0x400  startup.o [1]
+                            - 0x20001b50   0x400
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+          Address     Size
+          -------     ----
+Zero (__iar_zero_init3)
+    2 destination ranges, total size 0x16c2:
+          0x20000000   0x26c
+          0x200002f8  0x1456
+
+Copy (__iar_copy_init3)
+    1 source range, total size 0x8c (102% of destination):
+          0x0000c508    0x8c
+    1 destination range, total size 0x89:
+          0x2000026c    0x89
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module                ro code  ro data  rw data
+    ------                -------  -------  -------
+C:\Program Files\IAR Systems\Embedded Workbench 6.4\arm\examples\TexasInstruments\Stellaris\boards\ek-lm4f230H5QR\BBStabilizedPlatform_IR\Debug\Obj: [1]
+    A3906.o                   688                33
+    BMA180.o                  360               101
+    GPIOhandler.o             404
+    ITG3200.o                 320                81
+    Interpret.o             3 536       58       71
+    Led.o                     144                 2
+    MAG3110.o                  16                 1
+    MasterI2C.o               860                38
+    Stabilize.o             2 380       72      148
+    StabilizedPlatform.o      676        1       10
+    SysTick.o                 252                 4
+    comproc.o              19 904      474    4 016
+    encoder.o               2 664                40
+    filter3.o                 644       48       85
+    reg.o                      80                32
+    rmb20d01.o                136               365
+    startup.o                  30      620    1 024
+    uart_echo.o             1 020               312
+    -----------------------------------------------
+    Total:                 34 114    1 273    6 363
+
+command line: [2]
+    -----------------------------------------------
+    Total:
+
+dl7M_tln.a: [3]
+    div.o                      14
+    errno.o                    12                 4
+    exit.o                      4
+    low_level_init.o            4
+    sprintf.o                  52
+    xprintffull.o           3 278
+    xsprout.o                  10
+    xtls.o                      2
+    -----------------------------------------------
+    Total:                  3 376                 4
+
+driverlib-cm4f.a: [4]
+    adc.o                      10
+    cpu.o                      16
+    gpio.o                  1 220      120
+    interrupt.o               364      188      620
+    pwm.o                     148
+    qei.o                     100
+    sysctl.o                  732      120
+    systick.o                  56
+    timer.o                    80
+    uart.o                    214
+    -----------------------------------------------
+    Total:                  2 940      428      620
+
+m7M_tlv.a: [5]
+    DblAdd.o                  232
+    DblCmpEq.o                 32
+    DblCmpGe.o                 46
+    DblCmpLe.o                 46
+    DblDiv.o                  582
+    DblMul.o                  418
+    DblSub.o                  384
+    DblToFlt.o                144
+    DblToI32.o                 88
+    FltToDbl.o                 78
+    I32ToDbl.o                 48
+    asinf.o                    96
+    cosf.o                      6
+    fmodf.o                   316
+    fpinit_M.o                 26
+    pow.o                   2 232
+    sinf.o                      6
+    sqrt.o                    256
+    sqrtf.o                    28
+    xatanf.o                  164
+    xdint.o                   126
+    xdnorm.o                   66
+    xdscale.o                 276
+    xexp.o                    798
+    xfdint.o                   80
+    xfquad.o                  236
+    xfsin.o                   364
+    xlog.o                    176
+    -----------------------------------------------
+    Total:                  7 350
+
+rt7M_tl.a: [6]
+    ABImemcpy.o               118
+    ABImemmove.o              120
+    ABImemset.o               102
+    I64DivMod.o               238
+    I64DivZer.o                 2
+    cexit.o                    10
+    cmain.o                    22
+    copy_init3.o               46
+    cstartup_M.o               12
+    data_init3.o               40
+    iarEdom.o                  12
+    memchr.o                   88
+    strchr.o                   22
+    strcpy.o                   68
+    strlen.o                   54
+    zero_init3.o               34
+    -----------------------------------------------
+    Total:                    988
+
+shb_l.a: [7]
+    exit.o                     20
+    -----------------------------------------------
+    Total:                     20
+
+    Gaps                       40        4
+    Linker created                      47
+---------------------------------------------------
+    Grand Total:           48 828    1 752    6 987
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                      Address    Size  Type      Object
+-----                      -------    ----  ----      ------
+?main                   0x0000c331          Code  Gb  cmain.o [6]
+A3906Action             0x00009761     0x8  Code  Gb  A3906.o [1]
+A3906Init               0x00009649   0x118  Code  Gb  A3906.o [1]
+AAx                     0x2000170c     0x4  Data  Gb  filter3.o [1]
+AAy                     0x20001710     0x4  Data  Gb  filter3.o [1]
+ADCIntClear             0x0000c211     0xa  Code  Gb  adc.o [4]
+ADCIntHandler           0x0000c189    0x6a  Code  Gb  rmb20d01.o [1]
+AHRS                    0x0000bbc5    0x12  Code  Gb  filter3.o [1]
+AHRS_Init               0x0000bbb1    0x14  Code  Gb  filter3.o [1]
+AHRS_Step_c             0x0000bbd7   0x1d8  Code  Gb  filter3.o [1]
+A_FAST_VER              0x20000298     0x4  Data  Gb  Interpret.o [1]
+A_HOR                   0x20000290     0x4  Data  Gb  Interpret.o [1]
+Ax                      0x200016f4     0x4  Data  Gb  filter3.o [1]
+Axm                     0x20001700     0x4  Data  Gb  filter3.o [1]
+Ay                      0x200016f8     0x4  Data  Gb  filter3.o [1]
+Aym                     0x20001704     0x4  Data  Gb  filter3.o [1]
+Az                      0x200016fc     0x4  Data  Gb  filter3.o [1]
+Azm                     0x20001708     0x4  Data  Gb  filter3.o [1]
+BBLedInit               0x00005f45    0x14  Code  Gb  Led.o [1]
+BBLedToggle             0x00005f59    0x34  Code  Gb  Led.o [1]
+BBLedToggle1            0x00005f8d    0x34  Code  Gb  Led.o [1]
+BMA180Action            0x0000b61d     0x8  Code  Gb  BMA180.o [1]
+BMA180GetXYZ            0x0000b625    0x2a  Code  Gb  BMA180.o [1]
+BMA180Init              0x0000b511   0x10c  Code  Gb  BMA180.o [1]
+BMA180values            0x20001628     0x8  Data  Gb  BMA180.o [1]
+B_FAST_VER              0x2000029c     0x4  Data  Gb  Interpret.o [1]
+B_HOR                   0x20000294     0x4  Data  Gb  Interpret.o [1]
+BbTxBuffer              0x200010f0   0x100  Data  Gb  comproc.o [1]
+CPUcpsid                0x0000a075     0x8  Code  Gb  cpu.o [4]
+CPUcpsie                0x0000a07d     0x8  Code  Gb  cpu.o [4]
+CalculateChecksumMsg    0x0000234b    0x28  Code  Gb  comproc.o [1]
+Checksum                0x0000232d    0x1e  Code  Gb  comproc.o [1]
+ContropMessageLoop      0x00001fb1   0x2c0  Code  Gb  comproc.o [1]
+DL_PITCH_SAT            0x200002e8     0x4  Data  Gb  Stabilize.o [1]
+DL_ROLL_SAT             0x200002e0     0x4  Data  Gb  Stabilize.o [1]
+DMCflag                 0x20001650     0x4  Data  Lc  Interpret.o [1]
+DMCmode                 0x200002f0     0x2  Data  Gb  comproc.o [1]
+Disable_Zoom            0x0000405d   0x2d8  Code  Gb  comproc.o [1]
+Disabled_ARC            0x00002ea9    0x2c  Code  Gb  comproc.o [1]
+Disabled_CIC            0x00002e8b     0xc  Code  Gb  comproc.o [1]
+Download_Engine_Version
+                        0x00002611    0x1e  Code  Gb  comproc.o [1]
+Enabled_ARC             0x00002ed5    0x2c  Code  Gb  comproc.o [1]
+Enabled_CIC             0x00002e97     0xc  Code  Gb  comproc.o [1]
+EncoderInit2Point       0x0000694b    0x64  Code  Gb  encoder.o [1]
+EncoderInitReset        0x00006723   0x228  Code  Gb  encoder.o [1]
+EncoderLinesSet         0x00006fc5    0x18  Code  Gb  encoder.o [1]
+EncoderTick             0x00006e01   0x1c4  Code  Gb  encoder.o [1]
+EncoderWhile2Point      0x000069af    0xba  Code  Gb  encoder.o [1]
+Encoder_Init            0x00006c8d   0x172  Code  Gb  encoder.o [1]
+FaultISR                0x0000c303     0x2  Code  Lc  startup.o [1]
+Freeze_Unfreeze         0x20001746     0x1  Data  Lc  comproc.o [1]
+Freeze_Unfreeze_Video   0x00004385    0x50  Code  Gb  comproc.o [1]
+GPIODirModeSet          0x000083d7    0x48  Code  Gb  gpio.o [4]
+GPIOGetIntNumber        0x000082d5   0x102  Code  Lc  gpio.o [4]
+GPIOIntTypeSet          0x0000841f    0x5c  Code  Gb  gpio.o [4]
+GPIOPadConfigSet        0x0000847b   0x110  Code  Gb  gpio.o [4]
+GPIOPinConfigure        0x000086e3    0x44  Code  Gb  gpio.o [4]
+GPIOPinInit             0x0000b2bf    0xd0  Code  Gb  GPIOhandler.o [1]
+GPIOPinIntClear         0x000085b1     0x8  Code  Gb  gpio.o [4]
+GPIOPinIntEnable        0x0000858b    0x12  Code  Gb  gpio.o [4]
+GPIOPinIntStatus        0x0000859d    0x14  Code  Gb  gpio.o [4]
+GPIOPinTypeGPIOInput    0x000085d7    0x22  Code  Gb  gpio.o [4]
+GPIOPinTypeGPIOOutput   0x000085f9    0x22  Code  Gb  gpio.o [4]
+GPIOPinTypeI2C          0x0000861b    0x22  Code  Gb  gpio.o [4]
+GPIOPinTypeI2CSCL       0x0000863d    0x40  Code  Gb  gpio.o [4]
+GPIOPinTypePWM          0x0000867d    0x22  Code  Gb  gpio.o [4]
+GPIOPinTypeQEI          0x0000869f    0x22  Code  Gb  gpio.o [4]
+GPIOPinTypeUART         0x000086c1    0x22  Code  Gb  gpio.o [4]
+GPIOPortIntRegister     0x000085b9    0x1e  Code  Gb  gpio.o [4]
+GeneralPitchRoll        0x000097df    0xdc  Code  Gb  A3906.o [1]
+GetDMCflag              0x00005175     0xa  Code  Gb  Interpret.o [1]
+GetDMCmode              0x0000237b     0x8  Code  Gb  comproc.o [1]
+GetSysTickCount         0x0000713d     0x6  Code  Gb  SysTick.o [1]
+HardwareInit            0x0000b90d    0xbc  Code  Gb  StabilizedPlatform.o [1]
+HoldCoordinateMode      0x00005459    0xc8  Code  Gb  Interpret.o [1]
+I2C0IntHandler          0x0000aeb5   0x212  Code  Gb  MasterI2C.o [1]
+IL_PITCH_SAT            0x200002ec     0x4  Data  Gb  Stabilize.o [1]
+IL_ROLL_SAT             0x200002e4     0x4  Data  Gb  Stabilize.o [1]
+ITG3200Action           0x0000ae1f     0x8  Code  Gb  ITG3200.o [1]
+ITG3200AtRest           0x20001638     0x8  Data  Gb  ITG3200.o [1]
+ITG3200Init             0x0000ad69    0xb6  Code  Gb  ITG3200.o [1]
+ITG3200getXYZ           0x0000ae27    0x64  Code  Gb  ITG3200.o [1]
+ITG3200values           0x20001630     0x8  Data  Gb  ITG3200.o [1]
+Init                    0x20001748     0x1  Data  Gb  filter3.o [1]
+InitParams              0x0000ba19    0x68  Code  Gb  StabilizedPlatform.o [1]
+InitUART                0x00006005    0xd2  Code  Gb  uart_echo.o [1]
+Init_LABEL_Roll_Pitch   0x0000063d  0x1622  Code  Gb  comproc.o [1]
+Init_m_ALG_Params       0x00000515    0x38  Code  Gb  comproc.o [1]
+Init_m_ARC_Params       0x0000054d    0x1a  Code  Gb  comproc.o [1]
+Init_m_CIC_Params       0x000004ad    0x68  Code  Gb  comproc.o [1]
+Init_m_DRC_Params       0x0000041d    0x64  Code  Gb  comproc.o [1]
+Init_m_Frm_Avg_Params   0x000005c9    0x2e  Code  Gb  comproc.o [1]
+Init_m_NUC_Params       0x00000567    0x62  Code  Gb  comproc.o [1]
+Init_m_Zoom_Flip        0x00000481    0x2c  Code  Gb  comproc.o [1]
+InitializationUnit      0x000025a9    0x2e  Code  Gb  comproc.o [1]
+IntDefaultHandler       0x0000c305     0x2  Code  Lc  startup.o [1]
+IntDisable              0x0000887f    0x68  Code  Gb  interrupt.o [4]
+IntEnable               0x00008817    0x68  Code  Gb  interrupt.o [4]
+IntGPIOA                0x0000b211    0x5c  Code  Gb  GPIOhandler.o [1]
+IntGPIOE                0x0000b26d    0x52  Code  Gb  GPIOhandler.o [1]
+IntMasterDisable        0x000087a3     0xa  Code  Gb  interrupt.o [4]
+IntMasterEnable         0x00008799     0xa  Code  Gb  interrupt.o [4]
+IntPrioritySet          0x000087e1    0x36  Code  Gb  interrupt.o [4]
+IntRegister             0x000087ad    0x34  Code  Gb  interrupt.o [4]
+InterpretCmd            0x00005ed1    0x1e  Code  Gb  Interpret.o [1]
+InterpretCmdMode        0x0000576b    0x8c  Code  Gb  Interpret.o [1]
+InterpretCorrelatorMode
+                        0x00005db1   0x114  Code  Gb  Interpret.o [1]
+LOS_Pitch               0x00005d7d    0x14  Code  Gb  Interpret.o [1]
+LOS_Roll                0x00005d69    0x14  Code  Gb  Interpret.o [1]
+LabelCmdMsg             0x200002f8   0x6dc  Data  Gb  comproc.o [1]
+MAG3110Action           0x0000b679     0xa  Code  Gb  MAG3110.o [1]
+MainModeLoop            0x00002383    0x34  Code  Gb  comproc.o [1]
+MasterI2C0Init          0x0000b173    0x60  Code  Gb  MasterI2C.o [1]
+MasterI2C0Read          0x0000b0c7    0x56  Code  Gb  MasterI2C.o [1]
+MasterI2C0Write         0x0000b11d    0x56  Code  Gb  MasterI2C.o [1]
+Measurements            0x200015e4    0x14  Data  Gb  filter3.o [1]
+ModeVec                 0x0000c054    0xa0  Data  Gb  comproc.o [1]
+Motor                   0x200012f0    0xe0  Data  Gb  rmb20d01.o [1]
+MotorBrakePositionClean
+                        0x0000667b    0x4a  Code  Gb  encoder.o [1]
+MotorBrakePositionSet   0x00006615    0x66  Code  Gb  encoder.o [1]
+MotorPositionError      0x000066c5    0x5e  Code  Gb  encoder.o [1]
+NmiSR                   0x0000c301     0x2  Code  Lc  startup.o [1]
+NullMode                0x000023b7     0x4  Code  Gb  comproc.o [1]
+ObservationMode         0x00005319    0x74  Code  Gb  Interpret.o [1]
+OfflineState            0x000025d7    0x3a  Code  Gb  comproc.o [1]
+OmapMessageLoop         0x00001c5f   0x34c  Code  Gb  comproc.o [1]
+On_Off_Stabilize        0x00004f95    0x14  Code  Gb  comproc.o [1]
+OnlineState             0x000023bd   0x1ec  Code  Gb  comproc.o [1]
+Open_Close_Shutter      0x000036ad   0x25c  Code  Gb  comproc.o [1]
+PWMGenConfigure         0x0000a381    0x28  Code  Gb  pwm.o [4]
+PWMGenEnable            0x0000a3bd     0xa  Code  Gb  pwm.o [4]
+PWMGenPeriodSet         0x0000a3a9    0x14  Code  Gb  pwm.o [4]
+PWMOutputInvert         0x0000a3fd    0x18  Code  Gb  pwm.o [4]
+PWMOutputState          0x0000a3e5    0x18  Code  Gb  pwm.o [4]
+PWMPulseWidthSet        0x0000a3c7    0x1e  Code  Gb  pwm.o [4]
+Payload_corr            0x2000173f     0x1  Data  Lc  Interpret.o [1]
+Payload_type            0x200002f3     0x1  Data  Gb  Interpret.o [1]
+Phi                     0x200016e8     0x4  Data  Gb  filter3.o [1]
+Phic                    0x200016ec     0x4  Data  Gb  filter3.o [1]
+PilotWindowMode         0x00005615    0xb2  Code  Gb  Interpret.o [1]
+PointCoordinateMode     0x0000538d    0xc6  Code  Gb  Interpret.o [1]
+Put_Text_Label          0x00004cb5    0xf2  Code  Gb  comproc.o [1]
+QEI0IntHandler          0x00006a69   0x112  Code  Gb  encoder.o [1]
+QEI1IntHandler          0x00006b7b   0x112  Code  Gb  encoder.o [1]
+QEIConfigure            0x000095ef     0xe  Code  Gb  qei.o [4]
+QEIDirectionGet         0x00009605    0x10  Code  Gb  qei.o [4]
+QEIEnable               0x000095e5     0xa  Code  Gb  qei.o [4]
+QEIIntClear             0x00009645     0x4  Code  Gb  qei.o [4]
+QEIIntEnable            0x0000962f     0x8  Code  Gb  qei.o [4]
+QEIIntStatus            0x00009637     0xe  Code  Gb  qei.o [4]
+QEIPositionGet          0x000095fd     0x4  Code  Gb  qei.o [4]
+QEIPositionSet          0x00009601     0x4  Code  Gb  qei.o [4]
+QEIVelocityConfigure    0x0000961f    0x10  Code  Gb  qei.o [4]
+QEIVelocityEnable       0x00009615     0xa  Code  Gb  qei.o [4]
+RateMode                0x00005529    0xe6  Code  Gb  Interpret.o [1]
+RefreshNUCDataCommand   0x00003909    0xa8  Code  Gb  comproc.o [1]
+Region$$Table$$Base     0x0000c2bc           --   Gb  - Linker created -
+Region$$Table$$Limit    0x0000c2e8           --   Gb  - Linker created -
+Register                0x200015b0    0x20  Data  Gb  reg.o [1]
+ReportData              0x000051a5   0x174  Code  Gb  Interpret.o [1]
+ResetISR                0x0000c2e9    0x14  Code  Gb  startup.o [1]
+SetA3906Logic           0x00009769    0x76  Code  Gb  A3906.o [1]
+SetBitMode              0x0000b9c9    0x50  Code  Gb  StabilizedPlatform.o [1]
+SetDMCflag              0x0000517f    0x24  Code  Gb  Interpret.o [1]
+SetGPIOReg              0x00007f31    0x42  Code  Gb  reg.o [1]
+SetRelativeInertial     0x0000a41d    0x5c  Code  Gb  Stabilize.o [1]
+Set_LABEL_Visibility    0x00004f87     0xe  Code  Gb  comproc.o [1]
+Set_Text_Label          0x00004da7   0x1e0  Code  Gb  comproc.o [1]
+Set_Text_Label_Command  0x00004a6d   0x244  Code  Gb  comproc.o [1]
+Shutter_Read_Status     0x00002f01    0x3a  Code  Gb  comproc.o [1]
+Shutter_Write_Status    0x00002f3b    0x3a  Code  Gb  comproc.o [1]
+SoftwareInit            0x0000ba81    0x98  Code  Gb  StabilizedPlatform.o [1]
+Stabilize               0x0000a501   0x798  Code  Gb  Stabilize.o [1]
+StabilizeInit           0x0000a479    0x86  Code  Gb  Stabilize.o [1]
+Stabilize_status        0x20001747     0x1  Data  Gb  comproc.o [1]
+StowMode                0x000056c7    0xa4  Code  Gb  Interpret.o [1]
+SysCtlClockGet          0x00008045   0x230  Code  Gb  sysctl.o [4]
+SysCtlPWMClockSet       0x00008275    0x10  Code  Gb  sysctl.o [4]
+SysCtlPeripheralEnable  0x00007ff9    0x4c  Code  Gb  sysctl.o [4]
+SysTickEnable           0x000098f9     0xe  Code  Gb  systick.o [4]
+SysTickInit             0x00007143    0x1a  Code  Gb  SysTick.o [1]
+SysTickIntEnable        0x00009907     0xe  Code  Gb  systick.o [4]
+SysTickIntHandler       0x00007131     0xc  Code  Gb  SysTick.o [1]
+SysTickPeriodSet        0x00009915     0x8  Code  Gb  systick.o [4]
+SysTickValueGet         0x0000991d     0x6  Code  Gb  systick.o [4]
+Tec_Read_Handler        0x000043dd    0xe4  Code  Gb  comproc.o [1]
+Theta                   0x20001714     0x4  Data  Gb  filter3.o [1]
+Thetac                  0x200016f0     0x4  Data  Gb  filter3.o [1]
+Timer0IntHandler        0x000070b5    0x7c  Code  Gb  SysTick.o [1]
+TimerConfigure          0x0000993f    0x20  Code  Gb  timer.o [4]
+TimerEnable             0x00009931     0xe  Code  Gb  timer.o [4]
+TimerInit               0x0000715d    0x3e  Code  Gb  SysTick.o [1]
+TimerIntClear           0x0000997d     0x4  Code  Gb  timer.o [4]
+TimerIntEnable          0x00009975     0x8  Code  Gb  timer.o [4]
+TimerLoadSet            0x00009965    0x10  Code  Gb  timer.o [4]
+UART0IntHandler         0x000060d7    0x6e  Code  Gb  uart_echo.o [1]
+UART0Send               0x000061b3    0xfc  Code  Gb  uart_echo.o [1]
+UART1IntHandler         0x00006145    0x6e  Code  Gb  uart_echo.o [1]
+UART1Send               0x000062af    0xfc  Code  Gb  uart_echo.o [1]
+UARTCharGetNonBlocking  0x0000510b    0x10  Code  Gb  uart.o [4]
+UARTCharPutNonBlocking  0x0000511b    0x12  Code  Gb  uart.o [4]
+UARTCharsAvail          0x000050f9    0x12  Code  Gb  uart.o [4]
+UARTConfigSetExpClk     0x00005077    0x52  Code  Gb  uart.o [4]
+UARTDisable             0x000050dd    0x18  Code  Gb  uart.o [4]
+UARTEnable              0x000050c9    0x14  Code  Gb  uart.o [4]
+UARTFIFOLevelSet        0x00005071     0x6  Code  Gb  uart.o [4]
+UARTIntClear            0x00005143     0x4  Code  Gb  uart.o [4]
+UARTIntEnable           0x0000512d     0x8  Code  Gb  uart.o [4]
+UARTIntStatus           0x00005135     0xe  Code  Gb  uart.o [4]
+UavLatitude             0x000057f9   0x48e  Code  Gb  Interpret.o [1]
+UavLongitude            0x00005c91    0xd4  Code  Gb  Interpret.o [1]
+Update_2_P              0x000044f5   0x578  Code  Gb  comproc.o [1]
+Upload_Black_Hot        0x00002fd1   0x28c  Code  Gb  comproc.o [1]
+Upload_Engine_Version   0x00002649   0x814  Code  Gb  comproc.o [1]
+Upload_General_Parameters
+                        0x00002e5d    0x2e  Code  Gb  comproc.o [1]
+Upload_H_Flip_Disable   0x0000365b    0x48  Code  Gb  comproc.o [1]
+Upload_H_Flip_Enable    0x00003611    0x4a  Code  Gb  comproc.o [1]
+Upload_V_Flip_Disable   0x000035c1    0x4a  Code  Gb  comproc.o [1]
+Upload_V_Flip_Enable    0x00003571    0x4a  Code  Gb  comproc.o [1]
+Upload_White_Hot        0x00003289   0x2e0  Code  Gb  comproc.o [1]
+Upload_ZoomX2           0x000039dd   0x334  Code  Gb  comproc.o [1]
+Upload_ZoomX4           0x00003d25   0x32e  Code  Gb  comproc.o [1]
+Upload_Zoom_Position    0x00004339    0x42  Code  Gb  comproc.o [1]
+_GenldFull              0x00009335   0x266  Code  Lc  xprintffull.o [3]
+_LdtobFull              0x00008f35   0x3fa  Code  Lc  xprintffull.o [3]
+_LitobFull              0x00008e1f   0x10e  Code  Lc  xprintffull.o [3]
+_PrintfFull             0x00008915   0x504  Code  Gb  xprintffull.o [3]
+_PutcharsFull           0x0000959b    0x2e  Code  Lc  xprintffull.o [3]
+_SProut                 0x00006433     0xa  Code  Gb  xsprout.o [3]
+__aeabi_cdcmpeq         0x00009a41          Code  Gb  DblCmpEq.o [5]
+__aeabi_cdcmple         0x00009a9d          Code  Gb  DblCmpLe.o [5]
+__aeabi_cdrcmple        0x00009a6d          Code  Gb  DblCmpGe.o [5]
+__aeabi_d2f             0x00007ea1          Code  Gb  DblToFlt.o [5]
+__aeabi_d2iz            0x00009acd          Code  Gb  DblToI32.o [5]
+__aeabi_d2uiz           0x00009af9          Code  Gb  DblToI32.o [5]
+__aeabi_dadd            0x00007d51          Code  Gb  DblAdd.o [5]
+__aeabi_ddiv            0x000071e1          Code  Gb  DblDiv.o [5]
+__aeabi_dmul            0x0000643d          Code  Gb  DblMul.o [5]
+__aeabi_dsub            0x00009b25          Code  Gb  DblSub.o [5]
+__aeabi_errno_addr      0x00009a61     0x6  Code  Gb  errno.o [3]
+__aeabi_f2d             0x000063e5          Code  Gb  FltToDbl.o [5]
+__aeabi_i2d             0x000071b1          Code  Gb  I32ToDbl.o [5]
+__aeabi_ldiv0           0x0000a419          Code  Gb  I64DivZer.o [6]
+__aeabi_memcpy          0x00007f81          Code  Gb  ABImemcpy.o [6]
+__aeabi_memcpy4         0x00007fa1          Code  Gb  ABImemcpy.o [6]
+__aeabi_memcpy8         0x00007fa1          Code  Gb  ABImemcpy.o [6]
+__aeabi_memmove         0x0000a085          Code  Gb  ABImemmove.o [6]
+__aeabi_memmove4        0x0000a085          Code  Gb  ABImemmove.o [6]
+__aeabi_memmove8        0x0000a085          Code  Gb  ABImemmove.o [6]
+__aeabi_memset          0x00007e39          Code  Gb  ABImemset.o [6]
+__aeabi_ui2d            0x000071c5          Code  Gb  I32ToDbl.o [5]
+__aeabi_uldivmod        0x0000a16d          Code  Gb  I64DivMod.o [6]
+__cmain                 0x0000c331          Code  Gb  cmain.o [6]
+__exit                  0x0000c35d    0x14  Code  Gb  exit.o [7]
+__iar_Dint              0x000099c3    0x7e  Code  Gb  xdint.o [5]
+__iar_Dnorm             0x00009981    0x42  Code  Gb  xdnorm.o [5]
+__iar_Dscale            0x0000a25d   0x114  Code  Gb  xdscale.o [5]
+__iar_Errno             0x20001734     0x4  Data  Gb  errno.o [3]
+__iar_Exp               0x00009d55   0x2ac  Code  Gb  xexp.o [5]
+__iar_FDint             0x0000b775    0x50  Code  Gb  xfdint.o [5]
+__iar_FQuad             0x0000b689    0xc2  Code  Gb  xfquad.o [5]
+__iar_FSin              0x0000b3a5   0x12a  Code  Gb  xfsin.o [5]
+__iar_Logpoly           0x00009ca5    0x76  Code  Gb  xlog.o [5]
+__iar_Memchr            0x0000a115          Code  Gb  memchr.o [6]
+__iar_Memset            0x00007e39          Code  Gb  ABImemset.o [6]
+__iar_Memset_word       0x00007e41          Code  Gb  ABImemset.o [6]
+__iar_Strchr            0x0000a0fd          Code  Gb  strchr.o [6]
+__iar_copy_init3        0x00005147    0x2e  Code  Gb  copy_init3.o [6]
+__iar_d2uiz             0x00009b05          Code  Gb  DblToI32.o [5]
+__iar_dadd              0x00007d65          Code  Gb  DblAdd.o [5]
+__iar_data_init3        0x0000c295    0x28  Code  Gb  data_init3.o [6]
+__iar_dlib_perthread_access
+                        0x0000a415     0x2  Code  Gb  xtls.o [3]
+__iar_dsub              0x00009b39          Code  Gb  DblSub.o [5]
+__iar_dsubStart         0x00009b4b          Code  Gb  DblSub.o [5]
+__iar_edom              0x0000b901          Code  Gb  iarEdom.o [6]
+__iar_init_vfp          0x0000c315          Code  Gb  fpinit_M.o [5]
+__iar_program_start     0x0000c307          Code  Gb  cstartup_M.o [6]
+__iar_sqrt              0x0000be45          Code  Gb  sqrt.o [5]
+__iar_ui2d              0x000071c9          Code  Gb  I32ToDbl.o [5]
+__iar_vfp_fmodf         0x0000b7c5          Code  Gb  fmodf.o [5]
+__iar_vfp_pow           0x0000790f    0x18  Code  Gb  pow.o [5]
+__iar_vfp_sqrt          0x0000be35          Code  Gb  sqrt.o [5]
+__iar_vfp_sqrtl         0x0000be35          Code  Gb  sqrt.o [5]
+__iar_xatanf            0x0000bfb1          Code  Gb  xatanf.o [5]
+__iar_zero_init3        0x00005fe3    0x22  Code  Gb  zero_init3.o [6]
+__low_level_init        0x0000c347     0x4  Code  Gb  low_level_init.o [3]
+__vector_table          0x00000000   0x26c  Data  Gb  startup.o [1]
+_call_main              0x0000c33d          Code  Gb  cmain.o [6]
+_exit                   0x0000c351          Code  Gb  cexit.o [6]
+_main                   0x0000c343          Code  Gb  cmain.o [6]
+asinf                   0x0000bf51          Code  Gb  asinf.o [5]
+bmaregs                 0x20001450    0x5c  Data  Gb  BMA180.o [1]
+brakeOnChange           0x2000173c     0x1  Data  Gb  A3906.o [1]
+cAx                     0x0000c4d8     0x4  Data  Gb  filter3.o [1]
+cAxx                    0x0000c4dc     0x4  Data  Gb  filter3.o [1]
+cAxy                    0x0000c4e0     0x4  Data  Gb  filter3.o [1]
+cAxz                    0x0000c4e4     0x4  Data  Gb  filter3.o [1]
+cAy                     0x0000c4e8     0x4  Data  Gb  filter3.o [1]
+cAyx                    0x0000c4ec     0x4  Data  Gb  filter3.o [1]
+cAyy                    0x0000c4f0     0x4  Data  Gb  filter3.o [1]
+cAyz                    0x0000c4f4     0x4  Data  Gb  filter3.o [1]
+cAz                     0x0000c4f8     0x4  Data  Gb  filter3.o [1]
+cAzx                    0x0000c4fc     0x4  Data  Gb  filter3.o [1]
+cAzy                    0x0000c500     0x4  Data  Gb  filter3.o [1]
+cAzz                    0x0000c504     0x4  Data  Gb  filter3.o [1]
+cThetac                 0x2000171c     0x4  Data  Gb  filter3.o [1]
+close_shutter           0x20000280     0x8  Data  Gb  comproc.o [1]
+cosf                    0x0000aea9     0x6  Code  Gb  cosf.o [5]
+cpGetMessage            0x000022f9     0xe  Code  Gb  comproc.o [1]
+cpGetMessageCommand     0x000022d9    0x20  Code  Gb  comproc.o [1]
+cpGetMessageData        0x00002307    0x14  Code  Gb  comproc.o [1]
+cpGetMessageDataLen     0x0000231b    0x12  Code  Gb  comproc.o [1]
+cpMessageReady          0x000022cb     0xe  Code  Gb  comproc.o [1]
+cpPutMessage            0x00002271    0x5a  Code  Gb  comproc.o [1]
+cpReset                 0x0000038b    0x92  Code  Gb  comproc.o [1]
+cpib                    0x20001520    0x28  Data  Gb  comproc.o [1]
+ctrl                    0x20000bd4   0x1d8  Data  Gb  comproc.o [1]
+currentaddress          0x20001744     0x1  Data  Lc  MasterI2C.o [1]
+dcycle                  0x20001618     0x8  Data  Gb  A3906.o [1]
+desiredencoder          0x20001610     0x8  Data  Gb  A3906.o [1]
+div                     0x0000a371     0xe  Code  Gb  div.o [3]
+e_pos_pitch             0x2000169c     0x4  Data  Gb  Stabilize.o [1]
+e_pos_roll              0x2000167c     0x4  Data  Gb  Stabilize.o [1]
+e_rate_pitch            0x200016a4     0x4  Data  Gb  Stabilize.o [1]
+e_rate_roll             0x20001684     0x4  Data  Gb  Stabilize.o [1]
+exit                    0x0000c34b     0x4  Code  Gb  exit.o [3]
+fmodf                   0x0000b7cd          Code  Gb  fmodf.o [5]
+g                       0x20001724     0x4  Data  Gb  filter3.o [1]
+g_curentmode            0x200002f2     0x1  Data  Lc  Interpret.o [1]
+g_fmaximum_hor_rate     0x200002a4     0x4  Data  Gb  Interpret.o [1]
+g_fmaximum_ver_rate     0x200002a0     0x4  Data  Gb  Interpret.o [1]
+g_pfnRAMVectors         0x20000000   0x26c  Data  Lc  interrupt.o [4]
+g_pucData               0x2000165c     0x4  Data  Lc  MasterI2C.o [1]
+g_pulDisRegs            0x0000c3dc    0x14  Data  Lc  interrupt.o [4]
+g_pulEnRegs             0x0000c3c8    0x14  Data  Lc  interrupt.o [4]
+g_pulGPIOBaseAddrs      0x0000c21c    0x78  Data  Lc  gpio.o [4]
+g_pulRCGCRegs           0x0000c44c     0xc  Data  Lc  sysctl.o [4]
+g_pulRegs               0x0000c0f4    0x94  Data  Lc  interrupt.o [4]
+g_pulXtals              0x00007428    0x6c  Data  Lc  sysctl.o [4]
+g_sendBuffer            0x20001570    0x20  Data  Gb  Interpret.o [1]
+g_tbstabilizer          0x200002f4     0x1  Data  Gb  StabilizedPlatform.o [1]
+g_ucOversampleIdx       0x20001730     0x4  Data  Gb  rmb20d01.o [1]
+g_ulAverage             0x20001728     0x4  Data  Gb  rmb20d01.o [1]
+g_ulCount               0x20001660     0x4  Data  Lc  MasterI2C.o [1]
+g_ulEncoder1Clocks      0x200016d8     0x4  Data  Lc  encoder.o [1]
+g_ulEncoder1Lines       0x200016c8     0x4  Data  Lc  encoder.o [1]
+g_ulEncoder1Previous    0x200016d0     0x4  Data  Lc  encoder.o [1]
+g_ulEncoderClocks       0x200016d4     0x4  Data  Lc  encoder.o [1]
+g_ulEncoderLines        0x200016c4     0x4  Data  Lc  encoder.o [1]
+g_ulEncoderPrevious     0x200016cc     0x4  Data  Lc  encoder.o [1]
+g_ulSampleBuffer        0x200013d0    0x80  Data  Gb  rmb20d01.o [1]
+g_ulState               0x20001743     0x1  Data  Lc  MasterI2C.o [1]
+g_ulSum                 0x2000172c     0x4  Data  Gb  rmb20d01.o [1]
+g_ulTickCount           0x200016c0     0x4  Data  Gb  SysTick.o [1]
+g_uldutycycle           0x20001674     0x4  Data  Gb  Stabilize.o [1]
+g_usEncoder1Flags       0x2000173a     0x2  Data  Lc  encoder.o [1]
+g_usEncoderFlags        0x20001738     0x2  Data  Lc  encoder.o [1]
+horizontal              0x20001658     0x4  Data  Gb  Interpret.o [1]
+ignorejoystick          0x20001745     0x1  Data  Gb  StabilizedPlatform.o [1]
+init_ctrl               0x0000026d   0x11e  Code  Gb  comproc.o [1]
+internal_Pow            0x00007499   0x46c  Code  Lc  pow.o [5]
+io_rate_pitch           0x200016b4     0x4  Data  Gb  Stabilize.o [1]
+io_rate_roll            0x20001694     0x4  Data  Lc  Stabilize.o [1]
+itgready                0x2000173e     0x1  Data  Gb  ITG3200.o [1]
+itgregs                 0x200014ac    0x40  Data  Gb  ITG3200.o [1]
+k_8_pitch               0x200002d0     0x4  Data  Gb  Stabilize.o [1]
+k_8_roll                0x200002b4     0x4  Data  Gb  Stabilize.o [1]
+k_9_pitch               0x200002d4     0x4  Data  Gb  Stabilize.o [1]
+k_9_roll                0x200002b8     0x4  Data  Gb  Stabilize.o [1]
+k_a_pitch               0x200002c4     0x4  Data  Gb  Stabilize.o [1]
+k_a_roll                0x200002a8     0x4  Data  Gb  Stabilize.o [1]
+k_g_pitch               0x200002c8     0x4  Data  Gb  Stabilize.o [1]
+k_g_roll                0x200002ac     0x4  Data  Gb  Stabilize.o [1]
+k_i_pitch               0x200002cc     0x4  Data  Gb  Stabilize.o [1]
+k_i_pitch_0             0x200002d8     0x4  Data  Gb  Stabilize.o [1]
+k_i_pitch_1             0x200002dc     0x4  Data  Gb  Stabilize.o [1]
+k_i_roll                0x200002b0     0x4  Data  Gb  Stabilize.o [1]
+k_i_roll_0              0x200002bc     0x4  Data  Gb  Stabilize.o [1]
+k_i_roll_1              0x200002c0     0x4  Data  Gb  Stabilize.o [1]
+lastitg                 0x200016b8     0x4  Data  Gb  StabilizedPlatform.o [1]
+lnbias                  0x00007930   0x420  Data  Lc  pow.o [5]
+lstate                  0x20001740     0x1  Data  Lc  Led.o [1]
+lstate1                 0x20001741     0x1  Data  Lc  Led.o [1]
+m_ALG_Params            0x200015f8     0xc  Data  Gb  comproc.o [1]
+m_ARC_Params            0x20001640     0x8  Data  Gb  comproc.o [1]
+m_CIC_Params            0x20000ec8   0x11c  Data  Gb  comproc.o [1]
+m_DRC_Params            0x20001590    0x20  Data  Gb  comproc.o [1]
+m_Frm_Avg_Params        0x20000fe4   0x10c  Data  Gb  comproc.o [1]
+m_NUC_Params            0x20000dac   0x11c  Data  Gb  comproc.o [1]
+m_TEC_Params            0x20001548    0x28  Data  Gb  comproc.o [1]
+m_Zoom_Flip             0x20001604     0xc  Data  Gb  comproc.o [1]
+m_nTxBuffIn             0x2000174a     0x1  Data  Gb  uart_echo.o [1]
+m_nTxBuffIn1            0x2000174c     0x1  Data  Gb  uart_echo.o [1]
+m_nTxNextNdx            0x2000174b     0x1  Data  Gb  uart_echo.o [1]
+m_nTxNextNdx1           0x2000174d     0x1  Data  Gb  uart_echo.o [1]
+m_tTxBuff               0x200014ec    0x34  Data  Gb  uart_echo.o [1]
+m_tTxBuff1              0x200011f0   0x100  Data  Gb  uart_echo.o [1]
+magready                0x20001742     0x1  Data  Gb  MAG3110.o [1]
+main                    0x0000bb19    0x52  Code  Gb  StabilizedPlatform.o [1]
+mdirection              0x20001620     0x8  Data  Gb  A3906.o [1]
+memchr                  0x0000a115          Code  Gb  memchr.o [6]
+memcpy                  0x00005fd5     0xe  Code  Gb  uart_echo.o [1]
+memmove                 0x00008905     0xe  Code  Gb  uart_echo.o [1]
+memset                  0x0000505d    0x14  Code  Gb  comproc.o [1]
+message                 0x200009d4   0x200  Data  Gb  comproc.o [1]
+motorinterrupt          0x2000164c     0x4  Data  Gb  A3906.o [1]
+new_adc                 0x20001749     0x1  Data  Gb  rmb20d01.o [1]
+omega_horizontal        0x20001670     0x4  Data  Gb  Stabilize.o [1]
+omega_vertical          0x2000166c     0x4  Data  Gb  Stabilize.o [1]
+open_shutter            0x20000288     0x8  Data  Gb  comproc.o [1]
+out_rate_pitch          0x200016b0     0x4  Data  Gb  Stabilize.o [1]
+out_rate_roll           0x20001690     0x4  Data  Gb  Stabilize.o [1]
+prevenc                 0x200016e4     0x4  Data  Gb  encoder.o [1]
+pulStack                0x20001750   0x400  Data  Lc  startup.o [1]
+putDMCmode              0x00002373     0x8  Code  Gb  comproc.o [1]
+ref_pos_pitch           0x20001698     0x4  Data  Gb  Stabilize.o [1]
+ref_pos_roll            0x20001678     0x4  Data  Gb  Stabilize.o [1]
+sPhic                   0x20001720     0x4  Data  Gb  filter3.o [1]
+sThetac                 0x20001718     0x4  Data  Gb  filter3.o [1]
+set_temperature         0x20000278     0x8  Data  Gb  comproc.o [1]
+sinf                    0x0000aeaf     0x6  Code  Gb  sinf.o [5]
+sprintf                 0x000065e1    0x34  Code  Gb  sprintf.o [3]
+sqrt                    0x0000be45          Code  Gb  sqrt.o [5]
+sqrtf                   0x0000bf35          Code  Gb  sqrtf.o [5]
+sqrtl                   0x0000be45          Code  Gb  sqrt.o [5]
+statearray              0x200015d0    0x14  Data  Gb  MasterI2C.o [1]
+stateindex              0x20001668     0x4  Data  Gb  MasterI2C.o [1]
+status_shutter          0x2000026c     0xc  Data  Gb  comproc.o [1]
+strchr                  0x0000a0fd          Code  Gb  strchr.o [6]
+strcpy                  0x00005019          Code  Gb  strcpy.o [6]
+strlen                  0x0000707d          Code  Gb  strlen.o [6]
+tempc                   0x20001664     0x4  Data  Lc  MasterI2C.o [1]
+u_rate_pitch            0x200016ac     0x4  Data  Gb  Stabilize.o [1]
+u_rate_roll             0x2000168c     0x4  Data  Gb  Stabilize.o [1]
+ulPeriod                0x20001648     0x4  Data  Gb  A3906.o [1]
+ulSysClock              0x200016bc     0x4  Data  Gb  StabilizedPlatform.o [1]
+ulstatus                0x200016dc     0x4  Data  Lc  encoder.o [1]
+ulstatus1               0x200016e0     0x4  Data  Lc  encoder.o [1]
+vertical                0x20001654     0x4  Data  Gb  Interpret.o [1]
+xbmaready               0x2000173d     0x1  Data  Gb  BMA180.o [1]
+y_pos_pitch             0x200016a0     0x4  Data  Gb  Stabilize.o [1]
+y_pos_roll              0x20001680     0x4  Data  Gb  Stabilize.o [1]
+y_rate_pitch            0x200016a8     0x4  Data  Gb  Stabilize.o [1]
+y_rate_roll             0x20001688     0x4  Data  Gb  Stabilize.o [1]
+
+
+[1] = C:\Program Files\IAR Systems\Embedded Workbench 6.4\arm\examples\TexasInstruments\Stellaris\boards\ek-lm4f230H5QR\BBStabilizedPlatform_IR\Debug\Obj
+[2] = command line
+[3] = dl7M_tln.a
+[4] = driverlib-cm4f.a
+[5] = m7M_tlv.a
+[6] = rt7M_tl.a
+[7] = shb_l.a
+
+  48 828 bytes of readonly  code memory
+   1 752 bytes of readonly  data memory
+   6 987 bytes of readwrite data memory
+
+Errors: none
+Warnings: none

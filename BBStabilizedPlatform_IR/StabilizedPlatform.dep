@@ -1,0 +1,1199 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<project>
+  <fileVersion>2</fileVersion>
+  <fileChecksum>149809709</fileChecksum>
+  <configuration>
+    <name>Debug</name>
+    <outputs>
+      <file>$PROJ_DIR$\ITG3200.c</file>
+      <file>$PROJ_DIR$\Led.c</file>
+      <file>$PROJ_DIR$\MAG3110.c</file>
+      <file>$PROJ_DIR$\MasterI2C.c</file>
+      <file>$PROJ_DIR$\reg.c</file>
+      <file>$PROJ_DIR$\rmb20d01.c</file>
+      <file>$PROJ_DIR$\Stabilize.c</file>
+      <file>$PROJ_DIR$\StabilizedPlatform.c</file>
+      <file>$PROJ_DIR$\startup.c</file>
+      <file>$PROJ_DIR$\SysTick.c</file>
+      <file>$PROJ_DIR$\uart_echo.c</file>
+      <file>$PROJ_DIR$\utilities.c</file>
+      <file>$TOOLKIT_DIR$\inc\c\xmtx.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\StabilizedPlatform.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\Led.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\SysTick.pbi</file>
+      <file>$TOOLKIT_DIR$\examples\TexasInstruments\Stellaris\driverlib\sysctl.h</file>
+      <file>$PROJ_DIR$\Debug\List\StabilizedPlatform.map</file>
+      <file>$PROJ_DIR$\Debug\Obj\rmb20d01.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\encoder.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\GPIOhandler.o</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Config_Normal.h</file>
+      <file>$PROJ_DIR$\mtype.h</file>
+      <file>$TOOLKIT_DIR$\lib\rt7M_tl.a</file>
+      <file>$TOOLKIT_DIR$\examples\TexasInstruments\Stellaris\driverlib\timer.h</file>
+      <file>$PROJ_DIR$\modeid.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\ctype.h</file>
+      <file>$TOOLKIT_DIR$\examples\TexasInstruments\Stellaris\driverlib\pwm.h</file>
+      <file>$TOOLKIT_DIR$\examples\TexasInstruments\Stellaris\driverlib\adc.h</file>
+      <file>$TOOLKIT_DIR$\examples\TexasInstruments\Stellaris\driverlib\i2c.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\xencoding_limits.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\BMA180.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\filter3.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\startup.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\rmb20d01.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\Led.pbi</file>
+      <file>$TOOLKIT_DIR$\inc\c\ymath.h</file>
+      <file>$TOOLKIT_DIR$\examples\TexasInstruments\Stellaris\utils\uartstdio.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\A3906.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\ITG3200.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\Stabilize.pbi</file>
+      <file>$TOOLKIT_DIR$\examples\TexasInstruments\Stellaris\inc\hw_nvic.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\xlocale_c.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\ystdio.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\MAG3110.o</file>
+      <file>$TOOLKIT_DIR$\inc\c\stdlib.h</file>
+      <file>$TOOLKIT_DIR$\examples\TexasInstruments\Stellaris\driverlib\pin_map.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\SysTick.o</file>
+      <file>$TOOLKIT_DIR$\examples\TexasInstruments\Stellaris\driverlib\gpio.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\MasterI2C.pbi</file>
+      <file>$TOOLKIT_DIR$\examples\TexasInstruments\Stellaris\driverlib\rom.h</file>
+      <file>$TOOLKIT_DIR$\examples\TexasInstruments\Stellaris\driverlib\fpu.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\BMA180.o</file>
+      <file>$TOOLKIT_DIR$\examples\TexasInstruments\Stellaris\driverlib\systick.h</file>
+      <file>$PROJ_DIR$\Interpret.h</file>
+      <file>$PROJ_DIR$\comproc.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\comproc.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\GPIOhandler.pbi</file>
+      <file>$TOOLKIT_DIR$\examples\TexasInstruments\Stellaris\driverlib\debug.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\MasterI2C.o</file>
+      <file>$PROJ_DIR$\A3906.h</file>
+      <file>$PROJ_DIR$\bluebird.h</file>
+      <file>$PROJ_DIR$\bma180.h</file>
+      <file>$PROJ_DIR$\constants.h</file>
+      <file>$PROJ_DIR$\encoder.h</file>
+      <file>$PROJ_DIR$\filter3.h</file>
+      <file>$PROJ_DIR$\globals.h</file>
+      <file>$PROJ_DIR$\ITG3200.h</file>
+      <file>$PROJ_DIR$\Led.h</file>
+      <file>$PROJ_DIR$\MAG3110.h</file>
+      <file>$PROJ_DIR$\MasterI2C.h</file>
+      <file>$PROJ_DIR$\pins.h</file>
+      <file>$PROJ_DIR$\reg.h</file>
+      <file>$PROJ_DIR$\rmb20d01.h</file>
+      <file>$PROJ_DIR$\Stabilize.h</file>
+      <file>$PROJ_DIR$\SysTick.h</file>
+      <file>$PROJ_DIR$\utilities.h</file>
+      <file>$TOOLKIT_DIR$\examples\TexasInstruments\Stellaris\driverlib\ewarm-cm4f\Exe\driverlib-cm4f.a</file>
+      <file>$PROJ_DIR$\A3906.c</file>
+      <file>$PROJ_DIR$\BMA180.c</file>
+      <file>$PROJ_DIR$\comproc.c</file>
+      <file>$PROJ_DIR$\encoder.c</file>
+      <file>$PROJ_DIR$\filter3.c</file>
+      <file>$PROJ_DIR$\GPIOhandler.c</file>
+      <file>$PROJ_DIR$\Interpret.c</file>
+      <file>$TOOLKIT_DIR$\inc\c\ysizet.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Threads.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\StabilizedPlatform.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\ITG3200.pbi</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Product.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\comproc.pbi</file>
+      <file>$PROJ_DIR$\Debug\Exe\StabilizedPlatform.out</file>
+      <file>$TOOLKIT_DIR$\inc\c\xtgmath.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\ycheck.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\xlocaleuse.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Defaults.h</file>
+      <file>$TOOLKIT_DIR$\examples\TexasInstruments\Stellaris\driverlib\qei.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\reg.o</file>
+      <file>$TOOLKIT_DIR$\examples\TexasInstruments\Stellaris\driverlib\interrupt.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\string.h</file>
+      <file>$TOOLKIT_DIR$\examples\TexasInstruments\Stellaris\driverlib\uart.h</file>
+      <file>$TOOLKIT_DIR$\examples\TexasInstruments\Stellaris\inc\lm4f230h5qr.h</file>
+      <file>$TOOLKIT_DIR$\examples\TexasInstruments\Stellaris\inc\hw_adc.h</file>
+      <file>$PROJ_DIR$\uart_echo.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\yvals.h</file>
+      <file>$TOOLKIT_DIR$\lib\m7M_tlv.a</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Product_string.h</file>
+      <file>$TOOLKIT_DIR$\lib\shb_l.a</file>
+      <file>$PROJ_DIR$\Debug\Obj\utilities.pbi</file>
+      <file>$TOOLKIT_DIR$\examples\TexasInstruments\Stellaris\utils\ustdlib.h</file>
+      <file>$PROJ_DIR$\GPIOhandler.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\uart_echo.pbi</file>
+      <file>$TOOLKIT_DIR$\inc\c\xlocale.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\Stabilize.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\filter3.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\Interpret.o</file>
+      <file>$TOOLKIT_DIR$\inc\c\stdarg.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\uart_echo.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\encoder.o</file>
+      <file>$TOOLKIT_DIR$\inc\c\wchar.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\reg.pbi</file>
+      <file>$PROJ_DIR$\uart_echo.icf</file>
+      <file>$TOOLKIT_DIR$\inc\c\stdio.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\math.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\utilities.o</file>
+      <file>$TOOLKIT_DIR$\examples\TexasInstruments\Stellaris\inc\hw_memmap.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\A3906.o</file>
+      <file>$TOOLKIT_DIR$\examples\TexasInstruments\Stellaris\inc\hw_types.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\xtls.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\Interpret.pbi</file>
+      <file>$TOOLKIT_DIR$\examples\TexasInstruments\Stellaris\inc\hw_ints.h</file>
+      <file>$TOOLKIT_DIR$\lib\dl7M_tln.a</file>
+      <file>$PROJ_DIR$\Debug\Obj\startup.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\MAG3110.pbi</file>
+      <file>$PROJ_DIR$\Cbuf.h</file>
+    </outputs>
+    <file>
+      <name>$PROJ_DIR$\ITG3200.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 39</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 88</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 99 93 104 95 21 89 30 86 85 106 61 130 125 127 58 48 46 98 16 70 76 67 75 110 74 71 72 22 66</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 99 93 104 95 21 89 30 86 85 106 61 130 125 127 58 48 46 98 16 70 76 67 75 110 74 71 72 22 66</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\Led.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 14</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 35</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 130 125 127 58 48 46 98 16 101 61 68 72 22 66</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 130 125 127 58 48 46 98 16 101 61 68 72 22 66</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\MAG3110.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 44</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 133</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 123 93 36 104 95 21 89 30 86 92 99 85 106 61 130 125 127 58 48 46 98 16 70 76 71 69 110</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 123 93 36 104 95 21 89 30 86 92 99 85 106 61 130 125 127 58 48 46 98 16 70 76 71 69 110</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\MasterI2C.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 59</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 49</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 61 130 125 127 58 48 46 50 98 16 100 29 71 72 22 66</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 61 130 125 127 58 48 46 50 98 16 100 29 71 72 22 66</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\reg.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 97</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 120</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 130 125 127 58 48 46 98 16 100 37 29 28 24 109 116 93 104 95 21 89 30 86 101 54 55 22 66 72 25</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 130 125 127 58 48 46 98 16 100 37 29 28 24 109 116 93 104 95 21 89 30 86 101 54 55 22 66 72 25</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\rmb20d01.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 34</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 18</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 99 93 104 95 21 89 30 86 85 106 122 43 61 125 127 102 58 48 46 96 27 16 53 24 28 98 50 130 101 60 110 76 75 73 71 103 64</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 99 93 104 95 21 89 30 86 85 106 122 43 61 125 127 102 58 48 46 96 27 16 53 24 28 98 50 130 101 60 110 76 75 73 71 103 64</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\Stabilize.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 113</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 40</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 45 93 104 95 21 89 30 86 85 123 36 92 125 127 101 48 46 96 50 16 53 98 134 61 130 60 73 67 62 54 74 66 72 22 65</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 45 93 104 95 21 89 30 86 85 123 36 92 125 127 101 48 46 96 50 16 53 98 134 61 130 60 73 67 62 54 74 66 72 22 65</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\StabilizedPlatform.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 13</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 87</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 45 93 104 95 21 89 30 86 85 122 43 99 106 61 130 125 127 109 116 48 46 28 58 51 16 50 98 100 24 27 96 70 67 62 103 75 76 68 60 73 74 54 55 22 71 69 64 65 72 66</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\startup.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 33</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 132</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 41 127</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 41 127</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\SysTick.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 47</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 15</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 66 72 22 51 130 125 127 58 16 53 24 98 75 55 61 60 73 54 64</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 66 72 22 51 130 125 127 58 16 53 24 98 75 55 61 60 73 54 64</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\uart_echo.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 117</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 111</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 99 93 104 95 21 89 30 86 85 106 130 125 127 101 58 48 46 98 16 100 50 37 29 28 24 109 116 53 61 75 54 103 55 22 25 66 72</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 99 93 104 95 21 89 30 86 85 106 130 125 127 101 58 48 46 98 16 100 50 37 29 28 24 109 116 53 61 75 54 103 55 22 25 66 72</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\utilities.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 124</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 108</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 61 125 127 16</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 61 125 127 16</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\A3906.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 126</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 38</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 45 93 104 95 21 89 30 86 85 61 125 127 58 48 46 27 16 130 28 98 60 75 73 76 110 71</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 45 93 104 95 21 89 30 86 85 61 125 127 58 48 46 27 16 130 28 98 60 75 73 76 110 71</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\BMA180.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 52</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 31</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 61 130 125 127 58 48 46 98 16 70 62 75 110 71 72 22 66</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 61 130 125 127 58 48 46 98 16 70 62 75 110 71 72 22 66</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\comproc.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 56</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 90</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 122 93 104 95 21 89 30 86 85 43 99 106 45 26 112 128 12 94 42 119 123 36 92 130 125 127 58 48 46 16 100 24 37 29 98 55 22 75 54 25 66 72 68 103 60 73 67 62 64</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 122 93 104 95 21 89 30 86 85 43 99 106 45 26 112 128 12 94 42 119 123 36 92 130 125 127 58 48 46 16 100 24 37 29 98 55 22 75 54 25 66 72 68 103 60 73 67 62 64</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\encoder.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 118</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 19</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 130 125 127 101 48 46 96 50 16 53 98 63 64 71 60 73</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 130 125 127 101 48 46 96 50 16 53 98 63 64 71 60 73</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\filter3.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 32</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 114</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 127 123 93 36 104 95 21 89 30 86 92 99 85 106 61 67 62 65</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 127 123 93 36 104 95 21 89 30 86 92 99 85 106 61 67 62 65</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\GPIOhandler.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 20</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 57</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 61 130 125 127 58 48 46 98 16 67 60 62 71 69</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 61 130 125 127 58 48 46 98 16 67 60 62 71 69</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\Interpret.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 115</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 129</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 122 93 104 95 21 89 30 86 85 43 99 106 45 130 125 127 58 48 46 16 100 24 37 29 98 54 55 22 25 66 72 103 60 73 64</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 122 93 104 95 21 89 30 86 85 43 99 106 45 130 125 127 58 48 46 16 100 24 37 29 98 54 55 22 25 66 72 103 60 73 64</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>[ROOT_NODE]</name>
+      <outputs>
+        <tool>
+          <name>ILINK</name>
+          <file> 17 91</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\Debug\Exe\StabilizedPlatform.out</name>
+      <outputs>
+        <tool>
+          <name>ILINK</name>
+          <file> 17</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ILINK</name>
+          <file> 121 126 52 20 39 115 14 44 59 113 13 47 56 118 32 97 34 33 117 124 77 107 23 105 131</file>
+        </tool>
+      </inputs>
+    </file>
+  </configuration>
+  <configuration>
+    <name>Release</name>
+    <outputs>
+      <file>$PROJ_DIR$\Release\Obj\comproc.o</file>
+      <file>$PROJ_DIR$\Release\Obj\GPIOhandler.o</file>
+      <file>$PROJ_DIR$\Release\Obj\filter3.o</file>
+      <file>$PROJ_DIR$\Release\Obj\StabilizedPlatform.pbd</file>
+      <file>$PROJ_DIR$\Release\Obj\encoder.pbi</file>
+      <file>$PROJ_DIR$\Release\Obj\StabilizedPlatform.pbi</file>
+      <file>$PROJ_DIR$\Release\Obj\comproc.pbi</file>
+      <file>$PROJ_DIR$\Release\Obj\BMA180.o</file>
+      <file>$PROJ_DIR$\Release\Obj\startup.pbi</file>
+      <file>$PROJ_DIR$\Release\Obj\MasterI2C.pbi</file>
+      <file>$PROJ_DIR$\Release\Obj\StabilizedPlatform.o</file>
+      <file>$PROJ_DIR$\Release\Obj\rmb20d01.o</file>
+      <file>$PROJ_DIR$\Release\Obj\filter3.pbi</file>
+      <file>$PROJ_DIR$\Release\Obj\Stabilize.pbi</file>
+      <file>$PROJ_DIR$\Release\Obj\ITG3200.pbi</file>
+      <file>$PROJ_DIR$\Release\Obj\startup.o</file>
+      <file>$PROJ_DIR$\Release\Obj\ITG3200.o</file>
+      <file>$PROJ_DIR$\Release\Obj\GPIOhandler.pbi</file>
+      <file>$PROJ_DIR$\Release\Obj\MasterI2C.o</file>
+      <file>$PROJ_DIR$\Release\Obj\uart_echo.pbi</file>
+      <file>$PROJ_DIR$\Release\Obj\MAG3110.o</file>
+      <file>$PROJ_DIR$\Release\Obj\Stabilize.o</file>
+      <file>$PROJ_DIR$\Release\Obj\reg.pbi</file>
+      <file>$PROJ_DIR$\Release\Obj\Interpret.o</file>
+      <file>$TOOLKIT_DIR$\config\linker\TexasInstruments\LM4F230H5QR.icf</file>
+      <file>$PROJ_DIR$\Release\Obj\SysTick.pbi</file>
+      <file>$PROJ_DIR$\Release\Obj\BMA180.pbi</file>
+      <file>$PROJ_DIR$\Release\Obj\utilities.pbi</file>
+      <file>$PROJ_DIR$\Release\Obj\A3906.pbi</file>
+      <file>$PROJ_DIR$\Release\Obj\Led.o</file>
+      <file>$PROJ_DIR$\Release\Obj\MAG3110.pbi</file>
+      <file>$PROJ_DIR$\ITG3200.c</file>
+      <file>$PROJ_DIR$\Led.c</file>
+      <file>$PROJ_DIR$\MAG3110.c</file>
+      <file>$PROJ_DIR$\MasterI2C.c</file>
+      <file>$PROJ_DIR$\reg.c</file>
+      <file>$PROJ_DIR$\rmb20d01.c</file>
+      <file>$PROJ_DIR$\Stabilize.c</file>
+      <file>$PROJ_DIR$\StabilizedPlatform.c</file>
+      <file>$PROJ_DIR$\startup.c</file>
+      <file>$PROJ_DIR$\SysTick.c</file>
+      <file>$PROJ_DIR$\uart_echo.c</file>
+      <file>$PROJ_DIR$\utilities.c</file>
+      <file>$TOOLKIT_DIR$\inc\c\xmtx.h</file>
+      <file>$TOOLKIT_DIR$\examples\TexasInstruments\Stellaris\driverlib\sysctl.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Config_Normal.h</file>
+      <file>$PROJ_DIR$\mtype.h</file>
+      <file>$TOOLKIT_DIR$\lib\rt7M_tl.a</file>
+      <file>$TOOLKIT_DIR$\examples\TexasInstruments\Stellaris\driverlib\timer.h</file>
+      <file>$PROJ_DIR$\modeid.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\ctype.h</file>
+      <file>$TOOLKIT_DIR$\examples\TexasInstruments\Stellaris\driverlib\pwm.h</file>
+      <file>$TOOLKIT_DIR$\examples\TexasInstruments\Stellaris\driverlib\adc.h</file>
+      <file>$TOOLKIT_DIR$\examples\TexasInstruments\Stellaris\driverlib\i2c.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\xencoding_limits.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\ymath.h</file>
+      <file>$TOOLKIT_DIR$\examples\TexasInstruments\Stellaris\utils\uartstdio.h</file>
+      <file>$TOOLKIT_DIR$\examples\TexasInstruments\Stellaris\inc\hw_nvic.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\xlocale_c.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\ystdio.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\stdlib.h</file>
+      <file>$TOOLKIT_DIR$\examples\TexasInstruments\Stellaris\driverlib\pin_map.h</file>
+      <file>$TOOLKIT_DIR$\examples\TexasInstruments\Stellaris\driverlib\gpio.h</file>
+      <file>$TOOLKIT_DIR$\examples\TexasInstruments\Stellaris\driverlib\rom.h</file>
+      <file>$TOOLKIT_DIR$\examples\TexasInstruments\Stellaris\driverlib\fpu.h</file>
+      <file>$TOOLKIT_DIR$\examples\TexasInstruments\Stellaris\driverlib\systick.h</file>
+      <file>$PROJ_DIR$\Interpret.h</file>
+      <file>$PROJ_DIR$\comproc.h</file>
+      <file>$TOOLKIT_DIR$\examples\TexasInstruments\Stellaris\driverlib\debug.h</file>
+      <file>$PROJ_DIR$\A3906.h</file>
+      <file>$PROJ_DIR$\bluebird.h</file>
+      <file>$PROJ_DIR$\bma180.h</file>
+      <file>$PROJ_DIR$\constants.h</file>
+      <file>$PROJ_DIR$\encoder.h</file>
+      <file>$PROJ_DIR$\filter3.h</file>
+      <file>$PROJ_DIR$\globals.h</file>
+      <file>$PROJ_DIR$\ITG3200.h</file>
+      <file>$PROJ_DIR$\Led.h</file>
+      <file>$PROJ_DIR$\MAG3110.h</file>
+      <file>$PROJ_DIR$\MasterI2C.h</file>
+      <file>$PROJ_DIR$\pins.h</file>
+      <file>$PROJ_DIR$\reg.h</file>
+      <file>$PROJ_DIR$\rmb20d01.h</file>
+      <file>$PROJ_DIR$\Stabilize.h</file>
+      <file>$PROJ_DIR$\SysTick.h</file>
+      <file>$PROJ_DIR$\utilities.h</file>
+      <file>$TOOLKIT_DIR$\examples\TexasInstruments\Stellaris\driverlib\ewarm-cm4f\Exe\driverlib-cm4f.a</file>
+      <file>$PROJ_DIR$\A3906.c</file>
+      <file>$PROJ_DIR$\BMA180.c</file>
+      <file>$PROJ_DIR$\comproc.c</file>
+      <file>$PROJ_DIR$\encoder.c</file>
+      <file>$PROJ_DIR$\filter3.c</file>
+      <file>$PROJ_DIR$\GPIOhandler.c</file>
+      <file>$PROJ_DIR$\Interpret.c</file>
+      <file>$TOOLKIT_DIR$\inc\c\ysizet.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Threads.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Product.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\xtgmath.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\ycheck.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\xlocaleuse.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Defaults.h</file>
+      <file>$TOOLKIT_DIR$\examples\TexasInstruments\Stellaris\driverlib\qei.h</file>
+      <file>$TOOLKIT_DIR$\examples\TexasInstruments\Stellaris\driverlib\interrupt.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\string.h</file>
+      <file>$TOOLKIT_DIR$\examples\TexasInstruments\Stellaris\driverlib\uart.h</file>
+      <file>$TOOLKIT_DIR$\examples\TexasInstruments\Stellaris\inc\lm4f230h5qr.h</file>
+      <file>$TOOLKIT_DIR$\examples\TexasInstruments\Stellaris\inc\hw_adc.h</file>
+      <file>$PROJ_DIR$\uart_echo.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\yvals.h</file>
+      <file>$TOOLKIT_DIR$\lib\m7M_tlv.a</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Product_string.h</file>
+      <file>$TOOLKIT_DIR$\examples\TexasInstruments\Stellaris\utils\ustdlib.h</file>
+      <file>$PROJ_DIR$\GPIOhandler.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\xlocale.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\stdarg.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\wchar.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\stdio.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\math.h</file>
+      <file>$TOOLKIT_DIR$\examples\TexasInstruments\Stellaris\inc\hw_memmap.h</file>
+      <file>$TOOLKIT_DIR$\examples\TexasInstruments\Stellaris\inc\hw_types.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\xtls.h</file>
+      <file>$TOOLKIT_DIR$\examples\TexasInstruments\Stellaris\inc\hw_ints.h</file>
+      <file>$TOOLKIT_DIR$\lib\dl7M_tln.a</file>
+      <file>$PROJ_DIR$\Cbuf.h</file>
+      <file>$PROJ_DIR$\Release\Obj\A3906.o</file>
+      <file>$PROJ_DIR$\Release\Obj\rmb20d01.pbi</file>
+      <file>$PROJ_DIR$\Release\Exe\StabilizedPlatform.out</file>
+      <file>$PROJ_DIR$\Release\Obj\SysTick.o</file>
+      <file>$PROJ_DIR$\Release\Obj\Interpret.pbi</file>
+      <file>$PROJ_DIR$\Release\Obj\utilities.o</file>
+      <file>$PROJ_DIR$\Release\Obj\encoder.o</file>
+      <file>$PROJ_DIR$\Release\Obj\Led.pbi</file>
+      <file>$PROJ_DIR$\Release\Obj\reg.o</file>
+      <file>$PROJ_DIR$\Release\Obj\uart_echo.o</file>
+    </outputs>
+    <file>
+      <name>$PROJ_DIR$\ITG3200.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 16</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 14</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 103 98 108 100 45 96 54 95 94 110 70 121 118 119 68 62 61 102 44 79 85 76 84 112 83 80 81 46 75</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 103 98 108 100 45 96 54 95 94 110 70 121 118 119 68 62 61 102 44 79 85 76 84 112 83 80 81 46 75</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\Led.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 29</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 131</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 121 118 119 68 62 61 102 44 105 70 77 81 46 75</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 121 118 119 68 62 61 102 44 105 70 77 81 46 75</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\MAG3110.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 20</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 30</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 117 98 55 108 100 45 96 54 95 97 103 94 110 70 121 118 119 68 62 61 102 44 79 85 80 78 112</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 117 98 55 108 100 45 96 54 95 97 103 94 110 70 121 118 119 68 62 61 102 44 79 85 80 78 112</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\MasterI2C.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 18</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 9</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 70 121 118 119 68 62 61 63 102 44 104 53 80 81 46 75</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 70 121 118 119 68 62 61 63 102 44 104 53 80 81 46 75</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\reg.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 132</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 22</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 121 118 119 68 62 61 102 44 104 56 53 52 48 111 114 98 108 100 45 96 54 95 105 66 67 46 75 81 49</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 121 118 119 68 62 61 102 44 104 56 53 52 48 111 114 98 108 100 45 96 54 95 105 66 67 46 75 81 49</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\rmb20d01.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 11</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 125</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 103 98 108 100 45 96 54 95 94 110 116 59 70 118 119 106 68 62 61 101 51 44 65 48 52 102 63 121 105 69 112 85 84 82 80 107 73</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 103 98 108 100 45 96 54 95 94 110 116 59 70 118 119 106 68 62 61 101 51 44 65 48 52 102 63 121 105 69 112 85 84 82 80 107 73</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\Stabilize.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 21</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 13</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 60 98 108 100 45 96 54 95 94 117 55 97 118 119 105 62 61 101 63 44 65 102 123 70 121 69 82 76 71 66 83 75 81 46 74</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 60 98 108 100 45 96 54 95 94 117 55 97 118 119 105 62 61 101 63 44 65 102 123 70 121 69 82 76 71 66 83 75 81 46 74</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\StabilizedPlatform.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 10</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 5</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 60 98 108 100 45 96 54 95 94 116 59 103 110 70 121 118 119 111 114 62 61 52 68 64 44 63 102 104 48 51 101 79 76 71 107 84 85 77 69 82 83 66 67 46 80 78 73 74 81 75</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 60 98 108 100 45 96 54 95 94 116 59 103 110 70 121 118 119 111 114 62 61 52 68 64 44 63 102 104 48 51 101 79 76 71 107 84 85 77 69 82 83 66 67 46 80 78 73 74 81 75</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\startup.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 15</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 8</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 57 119</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 57 119</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\SysTick.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 127</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 25</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 75 81 46 64 121 118 119 68 44 65 48 102 84 67 70 69 82 66 73</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 75 81 46 64 121 118 119 68 44 65 48 102 84 67 70 69 82 66 73</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\uart_echo.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 133</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 19</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 103 98 108 100 45 96 54 95 94 110 121 118 119 105 68 62 61 102 44 104 63 56 53 52 48 111 114 65 70 84 66 107 67 46 49 75 81</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 103 98 108 100 45 96 54 95 94 110 121 118 119 105 68 62 61 102 44 104 63 56 53 52 48 111 114 65 70 84 66 107 67 46 49 75 81</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\utilities.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 129</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 27</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 70 118 119 44</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 70 118 119 44</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\A3906.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 124</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 28</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 60 98 108 100 45 96 54 95 94 70 118 119 68 62 61 51 44 121 52 102 69 84 82 85 112 80</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 60 98 108 100 45 96 54 95 94 70 118 119 68 62 61 51 44 121 52 102 69 84 82 85 112 80</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\BMA180.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 7</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 26</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 70 121 118 119 68 62 61 102 44 79 71 84 112 80 81 46 75</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 70 121 118 119 68 62 61 102 44 79 71 84 112 80 81 46 75</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\comproc.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 0</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 6</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 116 98 108 100 45 96 54 95 94 59 103 110 60 50 113 120 43 99 58 115 117 55 97 121 118 119 68 62 61 44 104 48 56 53 102 67 46 84 66 49 75 81 77 107 69 82 76 71 73</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 116 98 108 100 45 96 54 95 94 59 103 110 60 50 113 120 43 99 58 115 117 55 97 121 118 119 68 62 61 44 104 48 56 53 102 67 46 84 66 49 75 81 77 107 69 82 76 71 73</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\encoder.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 130</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 4</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 121 118 119 105 62 61 101 63 44 65 102 72 73 80 69 82</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 121 118 119 105 62 61 101 63 44 65 102 72 73 80 69 82</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\filter3.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 2</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 12</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 119 117 98 55 108 100 45 96 54 95 97 103 94 110 70 76 71 74</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 119 117 98 55 108 100 45 96 54 95 97 103 94 110 70 76 71 74</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\GPIOhandler.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 1</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 17</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 70 121 118 119 68 62 61 102 44 76 69 71 80 78</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 70 121 118 119 68 62 61 102 44 76 69 71 80 78</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\Interpret.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 23</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 128</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 116 98 108 100 45 96 54 95 94 59 103 110 60 121 118 119 68 62 61 44 104 48 56 53 102 66 67 46 49 75 81 107 69 82 73</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 116 98 108 100 45 96 54 95 94 59 103 110 60 121 118 119 68 62 61 44 104 48 56 53 102 66 67 46 49 75 81 107 69 82 73</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>[ROOT_NODE]</name>
+      <outputs>
+        <tool>
+          <name>ILINK</name>
+          <file> 126</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\Release\Exe\StabilizedPlatform.out</name>
+      <inputs>
+        <tool>
+          <name>ILINK</name>
+          <file> 24 124 7 1 16 23 29 20 18 21 10 127 0 130 2 132 11 15 133 129 86 47 109 122</file>
+        </tool>
+      </inputs>
+    </file>
+  </configuration>
+</project>
+
+

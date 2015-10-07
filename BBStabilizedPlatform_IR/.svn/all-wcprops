@@ -1,0 +1,353 @@
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/BBPrj1/!svn/ver/2498/trunk/Prj/BB/PL/LM4F230H5QR/BBStabilizedPlatform_IR
+END
+GPIOhandler.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/BBPrj1/!svn/ver/2498/trunk/Prj/BB/PL/LM4F230H5QR/BBStabilizedPlatform_IR/GPIOhandler.h
+END
+A3906.c
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/BBPrj1/!svn/ver/2519/trunk/Prj/BB/PL/LM4F230H5QR/BBStabilizedPlatform_IR/A3906.c
+END
+comproc.c
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/BBPrj1/!svn/ver/2519/trunk/Prj/BB/PL/LM4F230H5QR/BBStabilizedPlatform_IR/comproc.c
+END
+startup.c
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/BBPrj1/!svn/ver/2498/trunk/Prj/BB/PL/LM4F230H5QR/BBStabilizedPlatform_IR/startup.c
+END
+PWMtest.c
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/BBPrj1/!svn/ver/2498/trunk/Prj/BB/PL/LM4F230H5QR/BBStabilizedPlatform_IR/PWMtest.c
+END
+mtype.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/BBPrj1/!svn/ver/2498/trunk/Prj/BB/PL/LM4F230H5QR/BBStabilizedPlatform_IR/mtype.h
+END
+Led.c
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/BBPrj1/!svn/ver/2498/trunk/Prj/BB/PL/LM4F230H5QR/BBStabilizedPlatform_IR/Led.c
+END
+modeid.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/BBPrj1/!svn/ver/2498/trunk/Prj/BB/PL/LM4F230H5QR/BBStabilizedPlatform_IR/modeid.h
+END
+A3906.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/BBPrj1/!svn/ver/2498/trunk/Prj/BB/PL/LM4F230H5QR/BBStabilizedPlatform_IR/A3906.h
+END
+comproc.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/BBPrj1/!svn/ver/2498/trunk/Prj/BB/PL/LM4F230H5QR/BBStabilizedPlatform_IR/comproc.h
+END
+MAG3110.c
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/BBPrj1/!svn/ver/2498/trunk/Prj/BB/PL/LM4F230H5QR/BBStabilizedPlatform_IR/MAG3110.c
+END
+Led.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/BBPrj1/!svn/ver/2498/trunk/Prj/BB/PL/LM4F230H5QR/BBStabilizedPlatform_IR/Led.h
+END
+uart_echo.c
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/BBPrj1/!svn/ver/2498/trunk/Prj/BB/PL/LM4F230H5QR/BBStabilizedPlatform_IR/uart_echo.c
+END
+utilities.c
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/BBPrj1/!svn/ver/2498/trunk/Prj/BB/PL/LM4F230H5QR/BBStabilizedPlatform_IR/utilities.c
+END
+Interpret.c
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/BBPrj1/!svn/ver/2519/trunk/Prj/BB/PL/LM4F230H5QR/BBStabilizedPlatform_IR/Interpret.c
+END
+uart_echo.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/BBPrj1/!svn/ver/2498/trunk/Prj/BB/PL/LM4F230H5QR/BBStabilizedPlatform_IR/uart_echo.h
+END
+pins.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/BBPrj1/!svn/ver/2498/trunk/Prj/BB/PL/LM4F230H5QR/BBStabilizedPlatform_IR/pins.h
+END
+MAG3110.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/BBPrj1/!svn/ver/2498/trunk/Prj/BB/PL/LM4F230H5QR/BBStabilizedPlatform_IR/MAG3110.h
+END
+utilities.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/BBPrj1/!svn/ver/2498/trunk/Prj/BB/PL/LM4F230H5QR/BBStabilizedPlatform_IR/utilities.h
+END
+constants.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/BBPrj1/!svn/ver/2498/trunk/Prj/BB/PL/LM4F230H5QR/BBStabilizedPlatform_IR/constants.h
+END
+Interpret.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/BBPrj1/!svn/ver/2498/trunk/Prj/BB/PL/LM4F230H5QR/BBStabilizedPlatform_IR/Interpret.h
+END
+EncoderReset.c
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/BBPrj1/!svn/ver/2498/trunk/Prj/BB/PL/LM4F230H5QR/BBStabilizedPlatform_IR/EncoderReset.c
+END
+Cbuf.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/BBPrj1/!svn/ver/2498/trunk/Prj/BB/PL/LM4F230H5QR/BBStabilizedPlatform_IR/Cbuf.h
+END
+StabilizedPlatform.dep
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/BBPrj1/!svn/ver/2519/trunk/Prj/BB/PL/LM4F230H5QR/BBStabilizedPlatform_IR/StabilizedPlatform.dep
+END
+ITG3200.c
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/BBPrj1/!svn/ver/2519/trunk/Prj/BB/PL/LM4F230H5QR/BBStabilizedPlatform_IR/ITG3200.c
+END
+BMA180.c
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/BBPrj1/!svn/ver/2498/trunk/Prj/BB/PL/LM4F230H5QR/BBStabilizedPlatform_IR/BMA180.c
+END
+MasterI2C.c
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/BBPrj1/!svn/ver/2498/trunk/Prj/BB/PL/LM4F230H5QR/BBStabilizedPlatform_IR/MasterI2C.c
+END
+SysTick.c
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/BBPrj1/!svn/ver/2498/trunk/Prj/BB/PL/LM4F230H5QR/BBStabilizedPlatform_IR/SysTick.c
+END
+StabilizedPlatform.ewd
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/BBPrj1/!svn/ver/2498/trunk/Prj/BB/PL/LM4F230H5QR/BBStabilizedPlatform_IR/StabilizedPlatform.ewd
+END
+ITG3200.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/BBPrj1/!svn/ver/2519/trunk/Prj/BB/PL/LM4F230H5QR/BBStabilizedPlatform_IR/ITG3200.h
+END
+MasterI2C.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/BBPrj1/!svn/ver/2498/trunk/Prj/BB/PL/LM4F230H5QR/BBStabilizedPlatform_IR/MasterI2C.h
+END
+SysTick.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/BBPrj1/!svn/ver/2498/trunk/Prj/BB/PL/LM4F230H5QR/BBStabilizedPlatform_IR/SysTick.h
+END
+StabilizedPlatform.c
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/BBPrj1/!svn/ver/2519/trunk/Prj/BB/PL/LM4F230H5QR/BBStabilizedPlatform_IR/StabilizedPlatform.c
+END
+gimbal.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/BBPrj1/!svn/ver/2498/trunk/Prj/BB/PL/LM4F230H5QR/BBStabilizedPlatform_IR/gimbal.h
+END
+Console.c
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/BBPrj1/!svn/ver/2498/trunk/Prj/BB/PL/LM4F230H5QR/BBStabilizedPlatform_IR/Console.c
+END
+Script.c
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/BBPrj1/!svn/ver/2498/trunk/Prj/BB/PL/LM4F230H5QR/BBStabilizedPlatform_IR/Script.c
+END
+Console.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/BBPrj1/!svn/ver/2498/trunk/Prj/BB/PL/LM4F230H5QR/BBStabilizedPlatform_IR/Console.h
+END
+StabilizedPlatform.ewp
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/BBPrj1/!svn/ver/2498/trunk/Prj/BB/PL/LM4F230H5QR/BBStabilizedPlatform_IR/StabilizedPlatform.ewp
+END
+filter3.c
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/BBPrj1/!svn/ver/2498/trunk/Prj/BB/PL/LM4F230H5QR/BBStabilizedPlatform_IR/filter3.c
+END
+filter3.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/BBPrj1/!svn/ver/2498/trunk/Prj/BB/PL/LM4F230H5QR/BBStabilizedPlatform_IR/filter3.h
+END
+reg.c
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/BBPrj1/!svn/ver/2498/trunk/Prj/BB/PL/LM4F230H5QR/BBStabilizedPlatform_IR/reg.c
+END
+StabilizedPlatform.eww
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/BBPrj1/!svn/ver/2498/trunk/Prj/BB/PL/LM4F230H5QR/BBStabilizedPlatform_IR/StabilizedPlatform.eww
+END
+cbuf.c
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/BBPrj1/!svn/ver/2498/trunk/Prj/BB/PL/LM4F230H5QR/BBStabilizedPlatform_IR/cbuf.c
+END
+encoder.c
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/BBPrj1/!svn/ver/2519/trunk/Prj/BB/PL/LM4F230H5QR/BBStabilizedPlatform_IR/encoder.c
+END
+ministartup.c
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/BBPrj1/!svn/ver/2498/trunk/Prj/BB/PL/LM4F230H5QR/BBStabilizedPlatform_IR/ministartup.c
+END
+reg.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/BBPrj1/!svn/ver/2498/trunk/Prj/BB/PL/LM4F230H5QR/BBStabilizedPlatform_IR/reg.h
+END
+Controller.c
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/BBPrj1/!svn/ver/2498/trunk/Prj/BB/PL/LM4F230H5QR/BBStabilizedPlatform_IR/Controller.c
+END
+encoder.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/BBPrj1/!svn/ver/2519/trunk/Prj/BB/PL/LM4F230H5QR/BBStabilizedPlatform_IR/encoder.h
+END
+Stabilize.c
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/BBPrj1/!svn/ver/2519/trunk/Prj/BB/PL/LM4F230H5QR/BBStabilizedPlatform_IR/Stabilize.c
+END
+ADCtest.c
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/BBPrj1/!svn/ver/2498/trunk/Prj/BB/PL/LM4F230H5QR/BBStabilizedPlatform_IR/ADCtest.c
+END
+rmb20d01.c
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/BBPrj1/!svn/ver/2498/trunk/Prj/BB/PL/LM4F230H5QR/BBStabilizedPlatform_IR/rmb20d01.c
+END
+globals.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/BBPrj1/!svn/ver/2498/trunk/Prj/BB/PL/LM4F230H5QR/BBStabilizedPlatform_IR/globals.h
+END
+uart_echo.icf
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/BBPrj1/!svn/ver/2498/trunk/Prj/BB/PL/LM4F230H5QR/BBStabilizedPlatform_IR/uart_echo.icf
+END
+Stabilize.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/BBPrj1/!svn/ver/2498/trunk/Prj/BB/PL/LM4F230H5QR/BBStabilizedPlatform_IR/Stabilize.h
+END
+GPIOhandler.c
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/BBPrj1/!svn/ver/2498/trunk/Prj/BB/PL/LM4F230H5QR/BBStabilizedPlatform_IR/GPIOhandler.c
+END
+rmb20d01.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/BBPrj1/!svn/ver/2498/trunk/Prj/BB/PL/LM4F230H5QR/BBStabilizedPlatform_IR/rmb20d01.h
+END
+bluebird.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/BBPrj1/!svn/ver/2498/trunk/Prj/BB/PL/LM4F230H5QR/BBStabilizedPlatform_IR/bluebird.h
+END
+bma180.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/BBPrj1/!svn/ver/2498/trunk/Prj/BB/PL/LM4F230H5QR/BBStabilizedPlatform_IR/bma180.h
+END

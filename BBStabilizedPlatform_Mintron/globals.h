@@ -1,0 +1,251 @@
+//*****************************************************************************
+//
+// globals.h - Defines and Macros for the UART.
+//
+// Copyright (c) 2005-2010 Texas Instruments Incorporated.  All rights reserved.
+// Software License Agreement
+// 
+// Texas Instruments (TI) is supplying this software for use solely and
+// exclusively on TI's microcontroller products. The software is owned by
+// TI and/or its suppliers, and is protected under applicable copyright
+// laws. You may not combine this software with "viral" open-source
+// software in order to form a larger program.
+// 
+// THIS SOFTWARE IS PROVIDED "AS IS" AND WITH ALL FAULTS.
+// NO WARRANTIES, WHETHER EXPRESS, IMPLIED OR STATUTORY, INCLUDING, BUT
+// NOT LIMITED TO, IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+// A PARTICULAR PURPOSE APPLY TO THIS SOFTWARE. TI SHALL NOT, UNDER ANY
+// CIRCUMSTANCES, BE LIABLE FOR SPECIAL, INCIDENTAL, OR CONSEQUENTIAL
+// DAMAGES, FOR ANY REASON WHATSOEVER.
+// 
+// This is part of revision 6288 of the Stellaris Peripheral Driver Library.
+//
+//*****************************************************************************
+
+#ifndef __GLOBALS_H__
+#define __GLOBALS_H__
+
+//*****************************************************************************
+//
+// If building with a C++ compiler, make all of the definitions in this header
+// have a C binding.
+//
+//*****************************************************************************
+#ifdef __cplusplus
+extern "C"
+{
+#endif
+
+#ifndef __REG_H__
+#include "reg.h"
+#endif
+
+//#define _STAMP_CDU_
+
+//#define VERSION_1_3
+
+#define VERSION_1_5
+
+#define FALSE 0
+#define TRUE 1
+
+//#define NULL	((void *)0)
+
+//#define AGC_SENS
+
+//#define OMAP_RESIZER_SUPPORTED
+#define OMAP_VE
+#define ENGINE_TYPE ENGINE_OMAP_25U_384
+
+// Supported features
+#define TEC_SUPPORTED
+//#define TECLESS_SUPPORTED
+#define POWER_SAVE_SUPPORTED
+#define ARC_SUPPORTED
+#define SBC_SUPPORTED
+#define CIC_SUPPORTED
+#define FPGA_COMP_SUPPORTED
+#define MAX_NUM_OF_FRAMES_FOR_ARC_OFFSET_UPDATE 25
+	
+#define SHUTTER_SUPPORTED
+	
+#define	BAUDRATE0 B115200
+#define	BAUDRATE1 B115200
+
+#define	BAUDRATE_PC_UART	BAUDRATE0
+#define	BAUDRATE_FPGA_UART	BAUDRATE1
+#define FPGA_BAUD_DEF	16	//115200 baud
+// End of supported features
+
+#define NUM_OF_COLUMNS				396
+#define NUM_OF_ROWS					288
+#define IMAGE_WIDTH					396
+#define IMAGE_HIGHT					288
+#define NUM_OF_TABLE_COLUMNS		384
+#define NUM_OF_AUX_COLUMNS			2
+#define OUTPUT_BYTE_SHIFT			168
+#define NET_IMAGE_START				6 //zero based
+#define NET_IMAGE_END				391//zero based
+#define CDS_ROW_BLANKING_HEIGHT		0
+
+#define	CASE_REFERENCE_COLUMN_1		5
+#define	CASE_REFERENCE_COLUMN_2		6
+
+#define COMPENS_ROWS				(NUM_OF_ROWS+2)
+#define COMPENS_WIDTH				(NUM_OF_COLUMNS+5)
+#define COMPENS_BYTES_OFFSET		(5 * sizeof(Uint16))
+#define COMPENS_WORDS_OFFSET		5
+#define ROW_DATA_CMD_ID				0x02C9
+#define ROW_DATA_CMD_GLOBALS		0
+#define RRB_BUFF_SIZE				1024 //in words
+#define RRB_CMD_SIZE				(NUM_OF_ROWS*4+4) //2 bolometers per row * 2 bytes per bolometer + 2 Global_bolometers + 2 ID and ~ID
+#define RRB_CMD_ID					0x009B
+
+#define DRC_ALG_TYPE_PARAM			600
+
+#define ARC_THRESHOLD_FINE_DEFAULT  10
+#define ARC_THRESHOLD_COARSE_DEFAULT 40
+#define ARC_THRESHOLD_FINE_MIN      10
+#define ARC_THRESHOLD_COARSE_MIN    40
+#define ARC_THRESHOLD_FINE_MAX      10
+#define ARC_THRESHOLD_COARSE_MAX    40
+#define ARC_TIME_TRIGGER            180
+
+/*  DRC definitions */
+#define DRC_TYPE_LIN_AROUND_MEDIAN_BY_STDEV		4
+#define DRC_TYPE_LIN_AROUND_MEDIAN_BY_TAIL		3
+#define DRC_TYPE_LIN_DROP_BOTH_SIDES_TAIL		2
+#define DRC_TYPE_CLHE							1
+#define DRC_TYPE_LIN							0
+#define DRC_NO									5
+#define B_HOT_POLARITY						    0
+#define W_HOT_POLARITY						    1
+
+#define A_VIDEO									0
+#define D_VIDEO								    1
+
+//*****************************************************************************
+//
+// DMC ( Data Mode Command )	flags mode bit mask
+//
+//*****************************************************************************
+#define DMC_PILOT_WINDOW    0x00000001
+#define DMC_STOW		    0x00000002
+#define DMC_ZOOM_X2        	0x00000004
+#define DMC_ZOOM_X4   		0x00000008
+
+#define DMC_DISABLE_ZOOM	0x00000010
+#define DMC_STABILIZE_ON   	0x00000020
+#define DMC_STABILIZE_OFF	0x00000040
+#define DMC_CAM_GUIDE 		0x00000080
+
+#define DMC_RATE			0x00000100 
+#define DMC_POINT_2_COORD  	0x00000200
+#define DMC_PTC_CG			0x00000400 // CAM_GUIED+POINT2COORDENET
+#define DMC_OSD_ON         	0x00000800
+
+#define DMC_EXE_MODE   		0x00001000
+#define DMC_MOTOR_TEST		0x00002000
+#define DMC_WHITE_HOT		0x00004000
+#define DMC_ENGINE_CONNECT	0x00008000
+#define DMC_MARK_CROOS		0x00010000
+
+
+/********************************************************************/
+/*				  message structure (SCD protocol)											*/
+/*			 byte 0 	  -- header (0xAA for port 0, 0x55 for port 1)					*/
+/*			 byte 1 - 2   -- command id 													*/
+/*			 byte 3 - 4   -- length 															*/
+/*			 byte 5 - 4 + length   -- data (if length is 0 , no 						*/
+/*			 byte 4 + length + 1   -- checksum												*/
+/********************************************************************/
+	
+#define UDPATE_SHUTTER		  	0
+#define WAIT_DONE 		 		1
+
+enum Open_Clode_Shutter {
+
+	SET_TEMPERATURE = 0,		// 0x00
+	READ_SHUTTER_STATUS,		// 0x01
+	WRITE_SHUTTER_STATUS,		// 0x02
+	SET_CLOSE_OPEN_SHUTTER,		// 0x03
+	X_WRITE_SHUTTER_STATUS,		// 0x04
+	X_READ_SHUTTER_STATUS,		// 0x05
+	WAIT_FOR_MESSAGE			// 0x06
+};
+
+enum Update_2_P_Mode {
+
+	DISABLED_CIC_2_P = 0,				//	0x00
+	DISABLED_ARC_2_P,					//	0x01
+	CLOSE_SHUTTER_2_P,					//	0x02
+	READ_SHUTTER_STATUS_2_P,			//	0x03
+	WRITE_SHUTTER_STATUS_2_P,			//	0x04
+	F_AVG_SET_PARAM,					//	0x05
+	POLL_COMPILETION_FRAME_AVERAGING,	//	0x06
+	COMPLETED_FRAME_AVERAGING,			//	0x07
+	ENABLED_CIC_2_P,					//	0x08
+	SET_NEW_CIC_REFERENCE,				//	0x09
+	SET_NEW_NUC_REFERENCE,				//	0x0A
+	OPEN_SHUTTER_2_P,					//	0x0B
+	READ_SHUTTER_STATUS_2_P_2,			//	0x0C
+	WRITE_SHUTTER_STATUS_2_P_2,			//	0x0D
+	ENABLED_ARC_2_P,					//	0x0E
+	END_UPDATE_2_P,						//	0x0F
+	WAIT_FOR_MESSAGE_READY				//	0x10
+};
+
+
+enum Label_Text {
+
+  	  NEXT_ID = 0,					// 0x00
+	  HIDE_SHOW_LABEL, 			  	//  0x01
+	  X_LABEL_POSITION, 		    //  0x02
+	  LEBEL_TEXT,				  	//  0x03
+	  STYLE_FORMAT,			  		//  0x04
+	  END_LEBEL_CMD					// 0x05
+};
+
+WORD Download_Engine_Version(WORD mode);	// DOWNLOAD_VERSION 		0x00
+WORD Upload_Engine_Version(WORD mode);		// DOWNLOAD_VERSION 	0x01   
+WORD OnlineState(WORD mode);				// ONLINE_STATE (stop)		0x02  
+WORD Upload_Black_Hot(WORD mode);			//	BLACK_HOT					0x03   
+WORD Upload_White_Hot(WORD mode);			//	WHITE_HOT				0x04
+WORD Upload_General_Parameters(WORD mode);	// UPLOAD_G_PARAM			0x05
+WORD Open_Close_Shutter(WORD mode);			// OPEN CLOSE SHUTTER
+WORD Shutter_Read_Status(WORD mode);		// SHUTTER_READ_STATUS	0x08
+WORD Shutter_Write_Status(WORD mode);		// SHUTTER_WRITE_STATUS 	0x09
+WORD Enabled_ARC(WORD mode);				// ENABLED_ARC			0x0A   
+WORD Disabled_ARC(WORD mode);				// DISABLED_ARC 		0x0B
+WORD Enabled_CIC(WORD mode);				// ENABLED_CIC				0x0C
+WORD Disabled_CIC(WORD mode);				// DISABLED_CIC 		0x0D
+WORD Update_2_P(WORD mode); 				// UPDATE_2_P				0x0E   
+WORD NullMode(WORD mode);					//									0x0F  
+WORD OfflineState(WORD mode);				// OFFLINE_STATE (stop) 	0x10
+WORD Freeze_Unfreeze_Video(WORD mode);	// 
+WORD Upload_ZoomX2(WORD mode);
+WORD Upload_ZoomX4(WORD mode);
+WORD Disable_Zoom(WORD mode);
+WORD Upload_Zoom_Position(WORD mode);
+WORD Upload_H_Flip_Enable(WORD mode);
+WORD Upload_H_Flip_Disable(WORD mode);
+WORD Upload_V_Flip_Enable(WORD mode);
+WORD Upload_V_Flip_Disable(WORD mode);
+WORD Tec_Read_Handler(WORD mode);
+WORD Set_Text_Label_Command(WORD mode);
+WORD On_Off_Stabilize(WORD mode);
+WORD Mintron_Zoom_In_Out(WORD mode);
+//WORD Set_OSD_Titel(WORD mode);
+WORD Set_OSD_Position(WORD mode);
+WORD Mintron_Read_Zoom_Position(WORD mode);
+WORD Set_OSD_On(WORD mode);
+WORD Set_OSD_Off(WORD mode);
+WORD Set_Mark_Off(WORD mode);
+WORD Set_Mark_On(WORD mode);
+WORD Zoom_Mag_Off(WORD mode);
+WORD Zoom_Mag_On(WORD mode);
+WORD InitializationUnit(WORD mode);
+WORD Set_AGC_Level(WORD mode);
+WORD Set_SENS_Level(WORD mode);
+
+#endif

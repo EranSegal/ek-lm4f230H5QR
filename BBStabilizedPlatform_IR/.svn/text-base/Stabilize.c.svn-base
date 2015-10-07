@@ -1,0 +1,231 @@
+#define FILTER3
+#define STABILAZER_RELEASE
+//#define THATAE_BY_ENCODER
+#include <stdlib.h>
+#include <math.h>
+
+#include "cbuf.h"
+#include "bluebird.h"
+#include "inc/hw_ints.h"
+#include "inc/hw_types.h"
+#include "A3906.h"
+#include "rmb20d01.h"
+#include "ITG3200.h"
+#include "BMA180.h"
+#include "Interpret.h"
+#include "Stabilize.h"
+
+#ifdef FILTER3
+#include "filter3.h"
+#endif
+
+extern tBoolean ignorejoystick;
+extern int  vertical,horizontal;
+
+#define X_AXIS 2  // gyro readings
+#define Y_AXIS 1
+#define Z_AXIS 0
+#define X_AT_REST ITG3200AtRest[X_AXIS]
+#define Y_AT_REST ITG3200AtRest[Y_AXIS]
+#define Z_AT_REST ITG3200AtRest[Z_AXIS]
+
+float Phie,Thetae;
+float omega_vertical, omega_horizontal; 
+
+float k_0_roll = 0.5f;
+float k_1_roll = 2.0f;
+float k_2_roll = 2.0f;
+float k_3_roll = 3.0f;
+float k_4_roll = 0.05f;
+float k_5_roll = 0.10f;
+float k_7_roll = 0.01f;
+
+
+float k_0_pitch = 0.5f;
+float k_1_pitch = 2.0f;
+float k_2_pitch = 2.0f;
+float k_3_pitch = 0.4f;
+float k_4_pitch = 0.05f;
+float k_5_pitch = 0.10f;
+float k_7_pitch = 0.01f;
+
+unsigned mindutycycle[2] = {8,10}; //PITCH_MOTOR=0
+//////// NeW ConsTantS ///////////////////////////////////////////////                
+float ref_pos_roll = 0;
+float e_pos_roll = 0;
+float y_pos_roll = 0;
+float e_rate_roll = 0;
+float y_rate_roll  = 0;
+float u_rate_roll = 0;
+float U_ROLL_SAT = 2000.0; // Const to play with
+float out_rate_roll = 0;
+float prev_e_pos_roll = 0;
+float ie_rate_roll = 0;
+
+float ref_pos_pitch = 0;
+float e_pos_pitch = 0;
+float y_pos_pitch = 0;
+float ref_rate_pitch = 0;
+float e_rate_pitch = 0;
+float y_rate_pitch  = 0;
+float u_rate_pitch = 0;
+float U_PITCH_SAT = 2000.0; // Const to play with
+float out_rate_pitch = 0;
+float ie_rate_pitch = 0;
+
+////////END of NeW ConsTantS /////////////////////////////////////////////// 
+
+void StabilizeInit()
+{
+  int i;
+  long rest[3] = {0,0,0};
+  //CircularBufferInit(&que, BLOCKSIZE);
+
+  for (i=0; i<NUM_SAMPLES;)
+  {
+    if (itgready)
+    {
+      ITG3200getXYZ();
+      itgready = false;
+      i++;
+      rest[Z_AXIS] += ITG3200values[Z_AXIS];
+      rest[Y_AXIS] += ITG3200values[Y_AXIS];
+      rest[X_AXIS] += ITG3200values[X_AXIS];
+    }
+  }
+  ITG3200AtRest[Z_AXIS] = rest[Z_AXIS]/NUM_SAMPLES;
+  ITG3200AtRest[Y_AXIS] = rest[Y_AXIS]/NUM_SAMPLES;
+  ITG3200AtRest[X_AXIS] = rest[X_AXIS]/NUM_SAMPLES;
+
+}
+
+void Stabilize(enum MOTOR motor)
+{ 
+  if (motor == ROLL_MOTOR)
+  { 
+    //////////////////// ROLL /////////////////////////////////////////////////////////
+	#ifdef STABILAZER_RELEASE
+	if( ( Motor[motor].position <= Motor[motor].min_position) && (vertical < -4) && (ignorejoystick == false) )
+		 GeneralPitchRoll(motor,A3906_DISABLE,0);	
+	else
+	if( (Motor[motor].position >= Motor[motor].max_position) && (vertical > 4) && (ignorejoystick == false) )	 
+		GeneralPitchRoll(motor,A3906_DISABLE,0); // Set BIT
+	else	 
+	#endif	
+	{
+	    ref_pos_roll = omega_horizontal;
+	    y_rate_roll = ((ITG3200values[Y_AXIS] - Y_AT_REST) * (FULL_SCALE_RANGE / 32768.0f))*cosf(Thetac) - ((ITG3200values[X_AXIS] - X_AT_REST) * (FULL_SCALE_RANGE / 32768.0f))*sinf(Thetac);		
+					
+	    //y_rate_roll - stores current rolling speed
+	    y_pos_roll = Phic * RAD2DEG;
+	    e_pos_roll = ref_pos_roll - y_pos_roll; // in degrees
+	    e_rate_roll = k_0_roll*e_pos_roll-k_1_roll*y_rate_roll;
+
+		#ifdef STABILAZER_RELEASE
+	    if (abs(vertical) > 1)
+	    {
+	      e_rate_roll -= (vertical*60.0/128.0);
+	      omega_horizontal = (Phic * RAD2DEG);
+	    }
+		#endif
+		
+	    ie_rate_roll += e_rate_roll*k_2_roll;		
+	    u_rate_roll = k_3_roll*e_rate_roll + k_4_roll*ie_rate_roll;
+
+
+	    if (u_rate_roll > U_ROLL_SAT)
+	      out_rate_roll = U_ROLL_SAT;
+	    else if (u_rate_roll < -U_ROLL_SAT)
+	      out_rate_roll =-U_ROLL_SAT;
+	    else
+	      out_rate_roll = u_rate_roll;
+		  
+	    if (fabs(out_rate_roll) < k_7_roll) // 0.02
+	    {
+	      GeneralPitchRoll(ROLL_MOTOR, A3906_DISABLE,0);
+	    }
+	    else
+	    {			
+	      if (out_rate_roll > 0.0)
+	      {
+			  if( (Motor[motor].position <= Motor[motor].min_position) && (ignorejoystick == false) )
+				GeneralPitchRoll(motor,A3906_DISABLE,0);	
+			  else												
+				GeneralPitchRoll(motor,A3906_REVERSE, mindutycycle[motor] + abs((short)(out_rate_roll*k_5_roll)));
+		  }
+		  else
+		  {
+			  if( (Motor[motor].position >= Motor[motor].max_position) && (ignorejoystick == false) )	   
+				GeneralPitchRoll(motor,A3906_DISABLE,0); // Set BIT
+			  else			
+				GeneralPitchRoll(motor,A3906_FORWARD, mindutycycle[motor] + abs((short)(out_rate_roll*k_5_roll)));
+	      }
+	    }    
+	}
+  }
+  //////////////////// END of ROLL ////////////////////////////////////////////////
+  else
+  { 
+    //////////////////// PITCH ///////////////////////////////////////////////////////
+    #ifdef STABILAZER_RELEASE
+	if( (Motor[motor].position >= Motor[motor].max_position) && (horizontal < -4) && (ignorejoystick == false) )
+	 	GeneralPitchRoll(motor,A3906_DISABLE,0);  
+	else
+	if( (Motor[motor].position <= Motor[motor].min_position) && (horizontal > 4) && (ignorejoystick == false) )	 
+		GeneralPitchRoll(motor,A3906_DISABLE,0); // Set BIT
+	else
+	#endif
+	{
+
+	    ref_pos_pitch =  omega_vertical;
+	    y_rate_pitch = ((ITG3200values[Z_AXIS] - Z_AT_REST)*(FULL_SCALE_RANGE/32768.0f));
+		
+	    y_pos_pitch = Thetac * RAD2DEG;
+	    e_pos_pitch = ref_pos_pitch - y_pos_pitch;
+	    e_rate_pitch = k_0_pitch*e_pos_pitch - k_1_pitch*y_rate_pitch;
+
+		#ifdef STABILAZER_RELEASE
+	    if (abs(horizontal) > 1)
+	    {
+	        e_rate_pitch -= (horizontal*60.0/128.0);
+	        omega_vertical = (Thetac * RAD2DEG);
+	    }
+		#endif
+		
+	    ie_rate_pitch += e_rate_pitch*k_2_pitch;
+	    u_rate_pitch = k_3_pitch*e_rate_pitch + k_4_pitch*ie_rate_pitch;
+
+	    if (u_rate_pitch > U_PITCH_SAT)
+	      out_rate_pitch = U_PITCH_SAT;
+	    else if (u_rate_pitch < -U_PITCH_SAT)
+	      out_rate_pitch = -U_PITCH_SAT;
+	    else
+	      out_rate_pitch = u_rate_pitch;
+
+		
+	    if (fabs(out_rate_pitch) < k_7_pitch) // 0.01
+	      GeneralPitchRoll(PITCH_MOTOR,A3906_DISABLE,0);
+	    else
+	    {
+	      if (out_rate_pitch > 0.0)
+	      {
+			  if( (Motor[motor].position >= Motor[motor].max_position) && (ignorejoystick == false) )
+				GeneralPitchRoll(motor,A3906_DISABLE,0);	
+			  else		  	      	      	      			  	
+		        GeneralPitchRoll(motor,A3906_FORWARD, mindutycycle[motor] + abs((short)(out_rate_pitch*k_5_pitch)));
+	      }
+	      else
+	      {
+			  if( (Motor[motor].position <= Motor[motor].min_position) && (ignorejoystick == false) )	   
+				GeneralPitchRoll(motor,A3906_DISABLE,0); // Set BIT
+			  else			
+		        GeneralPitchRoll(motor,A3906_REVERSE, mindutycycle[motor] + abs((short)(out_rate_pitch*k_5_pitch)));
+			
+	      }
+	    } 
+	}
+  }
+  //////////////////// END of PITCH //////////////////////////////////////////////////
+}
+
+

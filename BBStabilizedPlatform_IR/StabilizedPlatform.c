@@ -1,0 +1,402 @@
+/*
+  Copyright Bluebird Aero Systems Engineering 2012
+
+  //////////////////////////////////////////
+  Suitable for IAR ver 6.40.1
+  //////////////////////////////////////////
+  
+  $Id: StabilizedPlatform.c,v 1.14 2011/07/14 07:19:48 EranS Exp $
+  $Log: StabilizedPlatform.c,v $
+
+  Revision 1.14.1  2012/02/12 06:51:48  EranS
+  Add pitch&roll limitation
+  
+  Revision 1.14  2011/07/14 07:19:48  EranS
+  added script engine
+
+  Revision 1.13  2011/06/18 09:13:50  EranS
+  before france changes
+
+  Revision 1.12  2011/05/11 07:39:16  EranS
+  Integrate with BB library, stow/pilot buttons now work
+
+  Revision 1.11  2011/05/03 07:33:52  EranS
+  Move omega initialization code, rename ADC init function
+
+  Revision 1.10  2011/04/12 15:03:35  EranS
+  added joystick interface
+
+  Revision 1.9  2011/04/12 05:50:35  EranS
+  calibrated gimbal / gyro / accelerometer
+
+  Revision 1.8  2011/04/10 10:37:29  EranS
+  Add filer3.c and AHRS from Lumus project
+
+  Revision 1.7  2011/04/06 13:09:03  EranS
+  modified BB application to work with stabilizer
+
+  Revision 1.6  2011/04/06 11:59:48  EranS
+  unified stabilize code for pitch/roll
+
+  Revision 1.5  2011/03/23 12:15:32  EranS
+  PWM test works, added Stow and Pilot functions
+
+  Revision 1.4  2011/03/22 15:42:49  EranS
+  added telemetry
+  fixed adc code
+
+  Revision 1.3  2011/03/21 13:42:03  EranS
+  fix adc code, add telemtry
+
+  Revision 1.2  2011/03/15 15:00:45  EranS
+  changed ADC functions
+
+  Revision 1.1  2011/03/15 12:23:45  EranS
+  First save
+
+
+  Bluebird Stabilized Platform
+*/
+
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+#include "bluebird.h"
+#include "inc/hw_ints.h"
+#include "inc/hw_memmap.h"
+#include "inc/hw_types.h"
+#include "utils/ustdlib.h"
+#include "driverlib/gpio.h"
+#include "driverlib/adc.h"
+#include "driverlib/debug.h"
+#include "driverlib/fpu.h"
+#include "driverlib/sysctl.h"
+#include "driverlib/rom.h"
+#include "driverlib/interrupt.h"
+#include "driverlib/uart.h"
+#include "driverlib/timer.h"
+#include "driverlib/pwm.h"
+#include "driverlib/qei.h"
+#include "driverlib/pin_map.h"
+#include "MasterI2C.h"
+#include "ITG3200.h"
+#include "bma180.h"
+#include "uart_echo.h"
+#include "SysTick.h"
+#include "utilities.h"
+#include "Led.h"
+#include "A3906.h"
+#include "rmb20d01.h"
+#include "Stabilize.h"
+#include "Interpret.h"
+#include "comproc.h"
+#include "pins.h"
+#include "MAG3110.h"
+#include "encoder.h"
+#include "filter3.h"
+#include "reg.h"
+#include "comproc.h"
+
+#define until(B) {volatile unsigned long long dd=0xffffffff; do{if(!B) break;}while(--dd);}
+
+/* ---- Private Variables ------------------------------------------------ */
+//#define TELEMETRY
+// 1.4.x for SCD Engine version
+char  *BBVersion  = "Build:1.4.8";
+
+tBoolean StowBitSet = false;
+tBoolean PilotBitSet = false;
+tBoolean onetimepilot = false;
+tBoolean onetimestow = false;
+tBoolean ignorejoystick = false;
+tBoolean g_tbstabilizer = true;
+tBoolean stabilizepitch = true;
+// output from joystick, from -128 to +128 each axis
+int   loc_vertical = 0, loc_horizontal=0;
+unsigned long lastitg;
+long g_lqei0dir,g_lqei1dir;
+unsigned long g_ulqei0pos,g_ulqei1pos;
+tBoolean g_bstow_pilot = false;
+
+// JOYSTICK ////////////////////////////////////////////////////////////////
+// output from joystick, from -128 to +128 each axis
+//int   joy_ver = 0, joy_hor=0;
+////////////////////////////////////////////////////////////////////////////
+
+void AHRS_Init();
+void AHRS();
+int StowInit();
+int PilotInit();
+void SoftwareInit();
+void SoftwareBitMode();
+
+extern float omega_vertical,omega_horizontal;  
+extern float Phic,Thetac;
+extern float u[2];
+extern unsigned long g_ulqei0pos_left,g_ulqei0pos_right;
+//*****************************************************************************
+//
+// The error routine that is called if the driver library encounters an error.
+//
+//*****************************************************************************
+//*****************************************************************************
+//
+// The error routine that is called if the driver library encounters an error.
+//
+//*****************************************************************************
+#ifdef DEBUG
+void
+__error__(char *pcFilename, unsigned long ulLine)
+{
+}
+#endif
+
+unsigned long ulSysClock;
+
+void HardwareInit()
+{
+  IntMasterDisable();
+  
+  // Set the system clock to run at 50MHz from the PLL. // PLL=400MHz
+  // sysc2000000lk = 400MHz/2/4 = 50MHz
+  //SysCtlClockSet(SYSCTL_SYSDIV_4 | SYSCTL_USE_PLL | SYSCTL_OSC_MAIN | SYSCTL_XTAL_16MHZ);
+
+  // Set the system clock to run at 50MHz from the PLL. // PLL=400MHz
+  // sysc2000000lk = 400MHz/2/2.5 = 80MHz
+  ROM_SysCtlClockSet(SYSCTL_SYSDIV_2_5 | SYSCTL_USE_PLL | SYSCTL_OSC_MAIN | SYSCTL_XTAL_16MHZ);
+
+  // Set the system clock to run at 20MHz from the PLL. // PLL=100MHz
+  // sysc2000000lk = 100MHz/2/4 = 20MHz
+  //SysCtlClockSet(SYSCTL_SYSDIV_10| SYSCTL_USE_PLL | SYSCTL_OSC_MAIN | SYSCTL_XTAL_16MHZ);
+  ulSysClock = ROM_SysCtlClockGet();
+   
+  if (InitUART(UART0_BASE,SysCtlClockGet(),19200,
+      	(UART_CONFIG_WLEN_8 | UART_CONFIG_STOP_ONE | UART_CONFIG_PAR_NONE)) == -1)
+      	  while (1);    // hang
+
+  if (InitUART(UART1_BASE,SysCtlClockGet(),115200,
+      	(UART_CONFIG_WLEN_8 | UART_CONFIG_STOP_ONE | UART_CONFIG_PAR_NONE)) == -1)
+      	  while (1);    // hang
+      
+  SysTickInit(1000);    // 1msec counter
+  TimerInit(1);    	 // 100ms counter
+  
+  BBLedInit();  
+  DEBUG_LED1(1);	 
+  DEBUG_LED2(1);	 
+  DEBUG_LED2(0);	 
+
+  MasterI2C0Init(SysCtlClockGet() >= 40000000L);  // Need 40MHz for 400K
+  A3906Init(); 
+  //RMBD01Init();
+  Encoder_Init(QEI0_BASE);   // J6 PITCH Encoder 
+  Encoder_Init(QEI1_BASE);   // J8 ROLL Encoder
+  
+  EncoderLinesSet(QEI0_BASE,64);
+  EncoderLinesSet(QEI1_BASE,64);
+
+  //GPIOPinInit('E',4,false,false); /*TP5 */
+  //GPIOPinInit('E',5,false,false); /*TP6 */
+
+  IntMasterEnable();
+}
+
+
+
+void SetBitMode(void)
+{
+	EncoderWhile2Point(PITCH_MOTOR,A3906_FORWARD,Motor[PITCH_MOTOR].relative);
+	EncoderWhile2Point(ROLL_MOTOR,A3906_REVERSE,Motor[ROLL_MOTOR].relative);
+					
+	Motor[PITCH_MOTOR].zero_pos = QEIPositionGet(QEI0_BASE);
+	Motor[ROLL_MOTOR].zero_pos = QEIPositionGet(QEI1_BASE);
+
+	/*------------------------------------------------------------*/
+	/* BMA180GetXYZ() time is 30~ microsecond						   */
+	/*------------------------------------------------------------*/				
+	BMA180GetXYZ(); 				
+	/*------------------------------------------------------------*/
+	/* AHRS() time is 25~ microsecond										 */
+	/*------------------------------------------------------------*/					
+	AHRS();
+
+	SetRelativeInertial();
+
+}
+
+void InitParams(void)
+{
+	//int i = 0;
+	//UartSysTickInit(1000);	  // 1msec counter
+
+	SetDMCflag(0xFFFF, 0);	
+	SetDMCflag(DMC_DISABLE_ZOOM,DMC_DISABLE_ZOOM); 	
+	SetDMCflag(DMC_STABILIZE_OFF,DMC_STABILIZE_OFF);
+	SetDMCflag(DMC_BLACK_HOT,DMC_BLACK_HOT); 
+	SetDMCflag(DMC_RATE,DMC_RATE); 
+	
+	
+	cpReset(0);
+	cpReset(1);
+	init_ctrl();
+	
+	Init_m_DRC_Params();
+	Init_m_Zoom_Flip();
+	Init_m_CIC_Params();
+	Init_m_ALG_Params();
+	Init_m_NUC_Params();
+	Init_m_Frm_Avg_Params();
+	Init_m_ARC_Params();
+	Init_LABEL_Roll_Pitch(0);
+ 	
+}
+
+void SoftwareInit()
+{
+
+  //
+  // initialization BlueBird parameters for communication protocol.
+  //
+  InitParams();
+  ITG3200Init();  
+  BMA180Init();  
+  //MAG3110Init();
+
+  //
+  // Set the priorities of the interrupts.	
+  // The following interrupts are used
+  // (listed in priority from highest to lowest):
+  //
+  //	 QEI-ROLL	 - The input from the quadrature encoder.
+  //
+  //	 QEI-PITCH	 - The input from the quadrature encoder.
+  //  
+  //	 PWM0		 - The periodic control loop for the application.
+  //
+  //	 PWM1		 - The periodic control loop for the application.
+  //  
+  //	 UART0		 - The UART <-> BBGCS.  This must be the same
+  //				   priority as the PAYLOAD interrupt in order to provide the
+  //				   required mutual exclusion between the two.
+  //
+  //	 UART1		 - The UART <-> PAYLOAD.  This must be the same
+  //				   priority as the BBGCS interrupt in order to provide the
+  //				   required mutual exclusion between the two.
+  //
+  //
+  // Set the priorities of the interrupts used by the application.
+  //
+
+  //
+  // Enable the peripherals used by this example.
+  //
+  
+  IntPrioritySet(INT_I2C0, 0x00);
+  IntPrioritySet(INT_GPIOA, 0x02);
+  IntPrioritySet(INT_GPIOE, 0x40);  
+  IntPrioritySet(QEI_PITCH_PHA_INT, 0x60);
+  IntPrioritySet(QEI_ROLL_PHA_INT, 0x60);
+  IntPrioritySet(INT_PWM0, 0x80);
+  IntPrioritySet(INT_PWM1, 0x80);
+  IntPrioritySet(INT_UART0, 0xA0);  
+  IntPrioritySet(INT_UART1, 0xA0);
+ 
+
+   //
+  // PITCH_MOTOR is PORTB & J6- PITCH Encoder 
+  //
+  // moves gimbal to extreme right and down
+  MotorBrakePositionClean(PITCH_MOTOR);
+  //GeneralPitchRoll(PITCH_MOTOR,A3906_FORWARD,500);	 
+  EncoderInitReset(QEI0_BASE,PITCH_MOTOR,A3906_REVERSE);  // J6 PITCH Encoder  
+  //EncoderInitReset(QEI0_BASE,PITCH_MOTOR,A3906_FORWARD);  // J6 PITCH Encoder  
+  //EncoderInitReset(QEI0_BASE,PITCH_MOTOR,A3906_REVERSE);  // J6 PITCH Encoder  
+
+  //
+  // ROLL_MOTOR is PORTA & J8- ROLL Encoder
+  //
+  // moves gimbal to extreme right and down    
+  MotorBrakePositionClean(ROLL_MOTOR);
+  //GeneralPitchRoll(ROLL_MOTOR,A3906_FORWARD,800);
+  EncoderInitReset(QEI1_BASE,ROLL_MOTOR,A3906_FORWARD); // J8 ROLL Encoder  
+  //EncoderInitReset(QEI1_BASE,ROLL_MOTOR,A3906_REVERSE); // J8 ROLL Encoder
+  //EncoderInitReset(QEI1_BASE,ROLL_MOTOR,A3906_FORWARD); // J8 ROLL Encoder  
+  
+  AHRS_Init();
+    
+  // move gimbal to centre, half down
+  omega_vertical = 80.0;  
+  omega_horizontal = 0.0;  
+  lastitg = g_ulTickCount;    
+  StabilizeInit();
+  SetBitMode();
+
+}
+unsigned long dmcflag;
+unsigned int loopcount;
+ int main(void)
+{
+  unsigned long last_telemtry;
+  unsigned char pbuff[100];
+
+  //
+  // Enable lazy stacking for interrupt handlers.  This allows floating-point
+  // instructions to be used within interrupt handlers, but at the expense of
+  // extra stack usage.
+  //
+  ROM_FPUEnable();
+  ROM_FPULazyStackingEnable();
+
+  HardwareInit();
+  SoftwareInit();
+         
+  while(1)
+  {
+    	// Execute main loop to interpretation protocol command	    
+    	MainModeLoop();	
+		
+		EncoderTick(QEI0_BASE); // PITCH Encoder	  
+		EncoderTick(QEI1_BASE); // ROLL Encoder
+
+		if (itgready == true){
+			
+		/*------------------------------------------------------------*/
+		/* ITG3200getXYZ() time is 30~ microsecond						   */
+		/*------------------------------------------------------------*/	
+		ITG3200getXYZ();
+		
+		/*------------------------------------------------------------*/
+		/* BMA180GetXYZ() time is 30~ microsecond						   */
+		/*------------------------------------------------------------*/				
+		BMA180GetXYZ(); 				
+		/*------------------------------------------------------------*/
+		/* AHRS() time is 25~ microsecond								    */
+		/*------------------------------------------------------------*/					
+		AHRS();
+		
+		if (g_tbstabilizer == true)
+		{
+			/*------------------------------------------------------------*/
+			/* Stabilize() time is 4~ microsecond								  */
+			/*------------------------------------------------------------*/						
+			Stabilize(ROLL_MOTOR);
+			/*------------------------------------------------------------*/
+			/* Stabilize() time is 4~ microsecond								  */
+				
+			/*------------------------------------------------------------*/									
+			Stabilize(PITCH_MOTOR);
+			/*------------------------------------------------------------*/
+			/* Total time is 115~ microsecond test by EranS 						*/
+			/* Gyro and Encoder dose not test yet. Need testing with new board			*/
+			/*------------------------------------------------------------*/		
+		}
+	}				
+  }		
+}
+
+// chance to turn off motors
+void  SysTickAction()
+{
+  GimbalsBoundsCheck(PITCH_MOTOR);
+  GimbalsBoundsCheck(ROLL_MOTOR);
+}

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<workspace>
+  <project>
+    <path>$WS_DIR$\..\..\..\driverlib\driverlib-cm4f.ewp</path>
+  </project>
+  <project>
+    <path>$WS_DIR$\PWMtest.ewp</path>
+  </project>
+  <project>
+    <path>$WS_DIR$\StabilizedPlatform.ewp</path>
+  </project>
+  <batchBuild/>
+</workspace>
+
+

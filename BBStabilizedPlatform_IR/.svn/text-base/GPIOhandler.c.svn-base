@@ -1,0 +1,160 @@
+/*
+  Copyright Bluebird Aero Systems Engineering 2012
+
+  $Id: GPIOhandler.c,v 1.4 2011/04/17 08:44:11 EranS Exp $
+  $Log: GPIOhandler.c,v $
+  Revision 1.4  2011/04/17 08:44:11  EranS
+  add proper reset of encoders via GPIO
+
+  Revision 1.3  2011/03/22 15:42:49  EranS
+  added telemetry
+  fixed adc code
+
+  Revision 1.2  2011/03/15 15:00:45  EranS
+  changed ADC functions
+
+  Revision 1.1  2011/03/15 12:23:45  EranS
+  First save
+
+
+ */
+
+#include "bluebird.h"
+#include "inc/hw_ints.h"
+#include "inc/hw_memmap.h"
+//#include "inc/hw_nvic.h"
+#include "inc/hw_types.h"
+#include "driverlib/debug.h"
+#include "driverlib/gpio.h"
+#include "driverlib/interrupt.h"
+#include "driverlib/sysctl.h"
+#include "ITG3200.h"
+#include "A3906.h"
+#include "BMA180.h"
+#include "pins.h"
+#include "MAG3110.h"
+
+
+//*****************************************************************************
+//
+// This is the handler for INT_GPIOB. 
+//*****************************************************************************
+void IntGPIOA(void)
+{
+  unsigned long state = GPIOPinIntStatus(GPIO_PORTA_BASE,0xff);  // check all possible pins
+  // scan all pins from 0 to 7
+  int pin = 0;
+  for (pin=0;pin<8;pin++)
+  {
+    if (state & (1<<pin))
+    {
+      switch(pin)
+      {
+
+		case BMA180_INTERRUPT_PIN:
+			
+		 BMA180Action();
+		break;
+		
+        case ITG3200_INTERRUPT_PIN:
+          ITG3200Action();		  
+          break;
+
+        case MAG3110_INTERRUPT_PIN:
+          MAG3110Action();		  
+          break;      
+		  
+        default:
+          break;
+      }
+      GPIOPinIntClear(GPIO_PORTA_BASE,1<<pin);
+      state &= ~(1<<pin);
+    }
+  }
+}
+
+//*****************************************************************************
+//
+// This is the handler for INT_GPIOC. 
+//*****************************************************************************
+void IntGPIOE(void)
+{
+  unsigned long state = GPIOPinIntStatus(GPIO_PORTE_BASE,0xff);  // check all possible pins
+  // scan all pins from 0 to 7
+  int pin = 0;
+  for (pin=0;pin<8;pin++)
+  {
+    if (state & (1<<pin))
+    {
+      switch(pin)
+      {
+        case A3906_OC1_INTERRUPT_PIN:
+          A3906Action(1);
+          break;
+        case A3906_OC2_INTERRUPT_PIN:
+          A3906Action(3);
+          break;
+        default:
+          break;
+      }
+      GPIOPinIntClear(GPIO_PORTE_BASE,1<<pin);
+      state &= ~(1<<pin);
+    }
+  }
+}
+
+// input true for input, false for output
+// only enable interrupt on rising edge
+// hasinterrupt true if we need to enable interrupt
+void GPIOPinInit(unsigned char port,unsigned char pin,tBoolean input,tBoolean hasinterrupt)
+{
+  unsigned long ulinterrupt,ulbase;
+  switch (port)
+  {
+    case 'A':
+      ulbase = GPIO_PORTA_BASE;
+      SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOA);
+      if (hasinterrupt)
+      {
+        ulinterrupt = INT_GPIOA;
+        GPIOPortIntRegister(GPIO_PORTA_BASE,IntGPIOA);  // instead of changing startup.c
+      }
+      break;
+
+    case 'E':
+		ulbase = GPIO_PORTE_BASE;
+		SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOE);
+		if (hasinterrupt)
+		{
+		  ulinterrupt = INT_GPIOE;
+		  GPIOPortIntRegister(GPIO_PORTE_BASE,IntGPIOE);  // instead of changing startup.c
+		}
+      break;
+  }
+
+  IntDisable(ulinterrupt);
+  // configure pin as input or output
+  if (input)
+    GPIOPinTypeGPIOInput(ulbase,1<<pin);
+  else
+    GPIOPinTypeGPIOOutput(ulbase,1<<pin);
+  if (hasinterrupt)
+  {
+    // setup interrupt
+    GPIOIntTypeSet(ulbase,1<<pin,GPIO_RISING_EDGE);
+    GPIOPinIntEnable(ulbase,1<<pin);
+  }
+  IntEnable(ulinterrupt);
+}
+
+/*
+    Make sure no interrupts etc yet
+*/
+void GPIOInit()
+{
+  SysCtlPeripheralDisable(SYSCTL_PERIPH_GPIOA);
+  SysCtlPeripheralDisable(SYSCTL_PERIPH_GPIOB);
+  SysCtlPeripheralDisable(SYSCTL_PERIPH_GPIOC);
+  SysCtlPeripheralDisable(SYSCTL_PERIPH_GPIOD);
+  SysCtlPeripheralDisable(SYSCTL_PERIPH_GPIOE);
+}

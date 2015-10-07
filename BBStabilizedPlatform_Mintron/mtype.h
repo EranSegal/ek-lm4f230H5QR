@@ -1,0 +1,100 @@
+/*
+  Copyright Bluebird Aero Systems Engineering 2011
+
+  $Id: mtype.h,v 1.3 2011/04/10 10:37:29 EranS Exp $
+  $Log: ITG3200.h,v $
+  Revision 1.3  2011/04/10 10:37:29  EranS
+  Add filer3.c and AHRS from Lumus project
+
+  Revision 1.2  2011/04/06 06:44:20  EranS
+  cleaning up, add some constants, move gyro_at_rest code
+
+  Revision 1.1  2011/03/15 12:23:45  EranS
+  First save
+
+
+*/
+
+#ifndef __MTYPE_H__
+#define __MTYPE_H__
+
+
+typedef unsigned char       BYTE;
+typedef unsigned short      HWORD;
+//typedef unsigned int        WORD;
+typedef unsigned short       WORD;
+
+typedef unsigned long long  DWORD;
+typedef unsigned int  		UINT;
+
+typedef const BYTE*         PCBYTE;
+
+
+#define LOBYTE(hw) ((BYTE)(hw))
+#define HIBYTE(hw) ((BYTE)((HWORD)(hw)>>8))
+
+#define LOHWORD(w) ((HWORD)(WORD)(w))
+#define HIHWORD(w) ((HWORD)((WORD)(w)>>16))
+
+#define LOWORD(w) ((WORD)(w))
+#define HIWORD(w) (((WORD)(w)>>32))
+
+#define MAKEHWORD(high, low) (((HWORD)((BYTE)(high))<<8) | (HWORD)((BYTE)(low)))
+#define MAKEWORD(high, low) (((WORD)((HWORD)(high))<<16) | (WORD)((HWORD)(low)))
+
+
+
+
+// ctrl.time[] def :
+#define TIME_NUM   		33
+#define MAIN       		0
+#define UPDATE_2_P 		1
+#define OFFLINE    		2
+#define ONLINE     		3
+#define ACT_4      		4
+#define ACT_5      		5
+#define TIME_ZOOM  		6
+#define TIME_ZOOM2 		7
+#define TIME_ZOOM4 		8
+#define TIME_AGC_SENS	9
+#define TEXT_LABEL 		10
+#define ACT_11     		11
+#define MIN_ZOOM   		12 
+#define MES_TIME   		13 
+#define WHITE_BLACK 	14 
+#define TIME_STABILIZ 	15
+#define TIME_OSD_TITEL	16
+#define TIME_OSD_POS	17
+#define TIME_STOW		18
+#define TIME_PILOT 		19
+#define TIME_RATE  		20
+#define TIME_BIT   		21
+#define TRAN_6     		22
+#define TRAN_7     		23
+#define TRAN_8     		24
+#define TRAN_9     		25
+#define TRAN_10    		26
+#define TRAN_11    	27
+#define TRAN_12    	28
+#define TRAN_13    	29
+#define TRAN_14    	30
+#define TRAN_15    	31
+#define TRAN_16    	32
+
+
+typedef struct  
+{
+   unsigned long time[TIME_NUM]; // for delay impl.
+   unsigned short state[TIME_NUM]; // for delay impl.   
+   unsigned char main_count;      // stam mishak
+   unsigned short exit_mode;	  // Mode should be return  
+   unsigned short action;		  // Action tmp command
+   unsigned short execute_mode;	  // Mode should be return  
+   unsigned short ret_mode;		  // Mode should be return
+   unsigned short next_mode[TIME_NUM];	  // Next Mode should execute
+   unsigned short num_try;		  // Number off try to error   
+   unsigned short try[TIME_NUM];		  // Number off try to error
+   
+} ctrl_type;
+
+#endif

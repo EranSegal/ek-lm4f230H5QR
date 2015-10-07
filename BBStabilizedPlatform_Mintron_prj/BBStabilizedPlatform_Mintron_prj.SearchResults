@@ -1,0 +1,9 @@
+---- PitchRollAmp Matches (10 in 4 files) ----
+PWMtest.c (c:\program files (x86)\iar systems\embedded workbench 6.5\arm\examples\texasinstruments\stellaris\boards\ek-lm4f230h5qr\bbstabilizedplatform_mintron):		ITG3200values[0],ITG3200values[1],ITG3200values[2],PitchRollAmp[type]);
+Rmb20d01.c (c:\program files (x86)\iar systems\embedded workbench 6.5\arm\examples\texasinstruments\stellaris\boards\ek-lm4f230h5qr\bbstabilizedplatform_mintron):    ADCSequenceDataGet(ADC0_BASE, 0, PitchRollAmp);
+Rmb20d01.c (c:\program files (x86)\iar systems\embedded workbench 6.5\arm\examples\texasinstruments\stellaris\boards\ek-lm4f230h5qr\bbstabilizedplatform_mintron):    rc = ADCSequenceDataGet(ADC0_BASE, 1, PitchRollAmp);
+Rmb20d01.c (c:\program files (x86)\iar systems\embedded workbench 6.5\arm\examples\texasinstruments\stellaris\boards\ek-lm4f230h5qr\bbstabilizedplatform_mintron):      memset(PitchRollAmp,0xff,sizeof(PitchRollAmp)); // so we know of error            	
+Rmb20d01.h (c:\program files (x86)\iar systems\embedded workbench 6.5\arm\examples\texasinstruments\stellaris\boards\ek-lm4f230h5qr\bbstabilizedplatform_mintron):unsigned long PitchRollAmp[2];
+Rmb20d01.h (c:\program files (x86)\iar systems\embedded workbench 6.5\arm\examples\texasinstruments\stellaris\boards\ek-lm4f230h5qr\bbstabilizedplatform_mintron):extern unsigned long PitchRollAmp[2];
+StabilizedPlatform.c (c:\program files (x86)\iar systems\embedded workbench 6.5\arm\examples\texasinstruments\stellaris\boards\ek-lm4f230h5qr\bbstabilizedplatform_mintron):	    PitchAmp = (float)PitchRollAmp[ROLL_MOTOR];
+StabilizedPlatform.c (c:\program files (x86)\iar systems\embedded workbench 6.5\arm\examples\texasinstruments\stellaris\boards\ek-lm4f230h5qr\bbstabilizedplatform_mintron):		//sprintf(pbuff,"%lu,%u,%u\r\n",g_ulTickCount,PitchRollAmp[PITCH_MOTOR],PitchRollAmp[ROLL_MOTOR]);	

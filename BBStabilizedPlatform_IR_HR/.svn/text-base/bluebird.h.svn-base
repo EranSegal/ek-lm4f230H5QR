@@ -1,0 +1,223 @@
+/*
+   Copyright Bluebird Aero Systems Engineering 2012
+
+  $Id: bluebird.h,v 1.14 2011/07/14 07:19:48 EranS Exp $
+  $Log: bluebird.h,v $
+  Revision 1.14  2011/07/14 07:19:48  EranS
+  added script engine
+
+  Revision 1.13  2011/05/03 06:46:07  EranS
+  After Eran rewire - pay attention to encoder pins
+
+  Revision 1.12  2011/04/17 08:44:11  EranS
+  add proper reset of encoders via GPIO
+
+  Revision 1.11  2011/04/12 15:03:35  EranS
+  added joystick interface
+
+  Revision 1.10  2011/04/10 10:37:29  EranS
+  Add filer3.c and AHRS from Lumus project
+
+  Revision 1.9  2011/04/06 13:09:03  EranS
+  modified BB application to work with stabilizer
+
+  Revision 1.8  2011/04/06 11:59:48  EranS
+  unified stabilize code for pitch/roll
+
+  Revision 1.7  2011/04/06 06:44:20  EranS
+  cleaning up, add some constants, move gyro_at_rest code
+
+  Revision 1.6  2011/04/06 05:44:34  EranS
+  add stabilizing code
+
+  Revision 1.5  2011/03/30 06:58:34  EranS
+  added more telemetry
+  simplified and improved motor driver
+
+  Revision 1.4  2011/03/24 12:31:38  EranS
+  Added more commands for telemetry
+  added power parameter to motor commands
+  calibrated parameters for motor commands
+
+  Revision 1.3  2011/03/23 12:15:32  EranS
+  PWM test works, added Stow and Pilot functions
+
+  Revision 1.2  2011/03/15 15:00:45  EranS
+  changed ADC functions
+
+  Revision 1.1  2011/03/15 12:23:45  EranS
+  First save
+
+  Layout on Bluebird platform board
+*/
+
+/*
+  include directory paths 
+
+$PROJ_DIR$\..\..\..
+$PROJ_DIR$\..
+$PROJ_DIR$\.
+
+  Set JTAG connection to SWD
+
+  Link with correct *.icf file, dont use default
+
+*/
+#define RESET_ACCELEROMETER
+
+//#define FLIR_ENGINE
+//#define TEST_ROLL
+//#define TEST_PITCH
+//#define OLD_GIMBAL
+
+//#define STAB_CARD        	0x0001
+//#define OLD_GIMBAL        	0x0002
+//#define NEW_GIMBAL          0x0004
+//#define MINTRON_ENGINE      0x0008
+//#define FILR_ENGINE         0x0010
+//#define BIRD384			    0x0020
+//#define OZLINE2             0x0040
+
+//#define SCD_ENGINE_DEV 	( STAB_CARD | OLD_GIMBAL | BIRD384 )
+//#define SCD_ENGINE    	( STAB_CARD | NEW_GIMBAL | BIRD384 )
+//#define FLIR	    	( STAB_CARD | OLD_GIMBAL  | FILR_ENGINE)
+//#define MINTRON   		( STAB_CARD | NEW_GIMBAL  | MINTRON_ENGINE) 
+
+/******************************/
+/*    Select BlueBird  PRODUCT   	    */
+/******************************/
+//#define PRODUCT   SCD_ENGINE_DEV
+//#define PRODUCT   SCD_ENGINE
+//#define PRODUCT   FLIR
+//#define PRODUCT   MINTRON
+
+
+//#ifdef OLD_GIMBAL
+//#define SCD_MAX_PITCH_UP 280
+//#define SCD_MAX_PITCH SCD_MAX_PITCH_UP + 100
+//#else
+//#define SCD_MAX_PITCH_UP 370 //  New Gimbal Encoder 360
+//#define SCD_MAX_PITCH_UP 750 //  New Gimbal Encoder 180
+//#define SCD_MAX_PITCH SCD_MAX_PITCH_UP + 200 //  New Gimbal
+//#endif
+
+//#ifdef FLIR_ENGINE
+//#define FLIR_MAX_PITCH_UP 180
+//#define FLIR_MAX_PITCH FLIR_MAX_PITCH_UP + 100
+//#endif
+
+#define USE_ITG3200_INTERRUPT
+#define USE_MAG3110_INTERRUPT
+
+// Version 2 of gimbal has some changes
+//#define ENCODERS_REVERSED  // remove when connected properly
+// stoper pin for pitch now 45 degrees up towards back of camera
+
+//typedef unsigned char       	BYTE;
+//typedef unsigned short      	HWORD;
+//typedef unsigned short		WORD;
+//typedef BYTE*         	PCBYTE;
+
+#define LOBYTE(hw) ((BYTE)(hw))
+#define HIBYTE(hw) ((BYTE)((HWORD)(hw)>>8))
+
+#define LOHWORD(w) ((HWORD)(WORD)(w))
+#define HIHWORD(w) ((HWORD)((WORD)(w)>>16))
+
+#define LOWORD(w) ((WORD)(w))
+#define HIWORD(w) (((WORD)(w)>>32))
+
+#define MAKEHWORD(high, low) (((HWORD)((BYTE)(high))<<8) | (HWORD)((BYTE)(low)))
+#define MAKEWORD(high, low) (((WORD)((HWORD)(high))<<16) | (WORD)((HWORD)(low)))
+  
+/*
+        U0RX PA0+---------+PB0 M-IN3
+        U0TX PA1|         |PB1 M-IN4
+      SSICLK PA2|         |PB2 I2CSCL
+      SSIFSS PA3|         |PB3 I2CSDA
+       SSIRX PA4|         |PB4 BMA180 dataready
+       SSITX PA5|         |PB5 ITG3200 dataready
+             PA6|         |PB6 CO+
+             PA7|         |PB7 TRST
+                |         |
+   TCK/SWCLK PC0|         |PD0 M_IN1
+   TMS/SWDIO PC1|         |PD1 M_IN2
+         TDI PC2|         |PD2 U1RX
+     TDO/SWO PC3|         |PD3 U1TX
+             PC4|         |PD4 CCP0 LED1
+       OC_M1 PC5|         |PD5 CCP2 LED2 
+       OC-M2 PC6|         |PD6 PITCH_ENCODER_RESET
+             PC7|         |PD7 ROLL_ENCODER_RESET
+                |         |
+Pitch ENC ADC0-0|         |
+ Roll ENC ADC0-1|         |
+          ADC0-2|         |
+          ADC0-3|         |
+        PWM4 PE0|         |
+        PWM5 PE1|         |
+                +---------+
+*/
+
+
+// BCP API Prototypes
+void InitParams(void);
+int InitUART(unsigned long Base, unsigned long UARTClk, unsigned long baud, unsigned long config);
+int MessageLoop(unsigned long ulBase,unsigned char cid);
+int SetARC(int fine, int coarse,int time);
+int ToggleWhiteHot(void);
+int FreezeVideo(void);
+int ReservedFunction(void);
+void PutOSDLable(char *pucBuffer);
+void Show_Label(void);
+void ReportData(unsigned long ulBase);
+
+
+//*****************************************************************************
+//
+// DMC ( Data Mode Command )	flags mode bit mask
+//
+//*****************************************************************************
+#define DMC_PILOT_WINDOW    0x00000001
+#define DMC_STOW		    0x00000002
+#define DMC_ZOOM_X2        	0x00000004
+#define DMC_ZOOM_X4   		0x00000008
+
+#define DMC_DISABLE_ZOOM	0x00000010
+#define DMC_STABILIZE_ON   	0x00000020
+#define DMC_STABILIZE_OFF	0x00000040
+#define DMC_CAM_GUIDE 		0x00000080
+
+#define DMC_RATE			0x00000100 
+#define DMC_POINT_2_COORD  	0x00000200
+#define DMC_PTC_CG			0x00000400 // CAM_GUIED+POINT2COORDENET
+#define DMC_OSD_ON         	0x00000800
+
+#define DMC_EXE_MODE   		0x00001000
+#define DMC_BLACK_HOT		0x00002000
+#define DMC_WHITE_HOT		0x00004000
+#define DMC_ENGINE_CONNECT	0x00008000
+#define DMC_MARK_CROOS		0x00010000
+
+
+
+// observations of encoder readings for pitch
+#define PITCH_ENC_0_DEG 245.0
+#define PITCH_ENC_90_DEG 750.0
+
+//#define MOTOR_WIRING_OPPOSITE   // remove this when both motors wired in the same sense
+
+#define PI 3.14159265
+#define RAD2DEG (180.0/PI) // 57.295779
+#define DEG2RAD (PI/180.0)
+
+/*
+    Define how the encoders respond to motor action, 
+    Comment out the incorrect one.
+*/
+//#define FORWARD_INCREASES_ENCODER
+#define FORWARD_DECREASES_ENCODER
+/*
+  Define how to reset gimbals at startup
+*/
+//#define GIMBAL_RESET A3906_FORWARD
+#define GIMBAL_RESET A3906_FORWARD
